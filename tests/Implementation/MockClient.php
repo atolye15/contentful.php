@@ -40,12 +40,18 @@ class MockClient implements ClientInterface
     private $environmentId;
 
     /**
+     * @var string
+     */
+    private $cacheKeyPrefix;
+
+    /**
      * MockClient constructor.
      */
-    public function __construct(string $spaceId = 'spaceId', string $environmentId = 'environmentId')
+    public function __construct(string $spaceId = 'spaceId', string $environmentId = 'environmentId', string $cacheKeyPrefix = 'cacheKeyPrefix')
     {
         $this->spaceId = $spaceId;
         $this->environmentId = $environmentId;
+        $this->cacheKeyPrefix = $cacheKeyPrefix;
     }
 
     /**
@@ -181,5 +187,13 @@ class MockClient implements ClientInterface
     public function getLastQuery()
     {
         return $this->lastQuery;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
     }
 }
