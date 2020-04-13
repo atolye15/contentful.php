@@ -141,6 +141,7 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
         // explicitly set to Preview.
         $this->isDeliveryApi = self::URI_PREVIEW !== $options->getHost();
         $this->defaultLocale = $options->getDefaultLocale();
+        $this->cacheKeyPrefix = $options->getCacheKeyPrefix();
 
         $this->resourcePool = Factory::create($this, $options);
         $this->scopedJsonDecoder = new ScopedJsonDecoder($this->spaceId, $this->environmentId);
@@ -167,6 +168,11 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     public function getEnvironmentId(): string
     {
         return $this->environmentId;
+    }
+
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
     }
 
     public function getResourceBuilder(): ResourceBuilderInterface
