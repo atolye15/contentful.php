@@ -27,7 +27,7 @@ class Factory
     public static function create(JsonDecoderClientInterface $client, ClientOptions $options): ResourcePoolInterface
     {
         if ($options->usesLowMemoryResourcePool()) {
-            return new Standard($client->getApi(), $client->getSpaceId(), $client->getEnvironmentId());
+            return new Standard($client->getApi(), $client->getSpaceId(), $client->getEnvironmentId(), $client->getCacheItemPool());
         }
 
         return new Extended(

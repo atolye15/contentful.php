@@ -60,6 +60,11 @@ class ClientOptions
     private $usesLowMemoryResourcePool = false;
 
     /**
+     * @var string
+     */
+    private $cacheKeyPrefix;
+
+    /**
      * ClientOptions constructor.
      */
     public function __construct()
@@ -122,14 +127,23 @@ class ClientOptions
         return $this->host;
     }
 
+    /**
+     * @param CacheItemPoolInterface $cacheItemPool
+     * @param bool                   $autoWarmup
+     * @param bool                   $cacheContent
+     *
+     * @return self
+     */
     public function withCache(
         CacheItemPoolInterface $cacheItemPool,
         bool $autoWarmup = false,
         bool $cacheContent = false
+        string $prefix = ''
     ): self {
         $this->cacheItemPool = $cacheItemPool;
         $this->cacheAutoWarmup = $autoWarmup;
         $this->cacheContent = $cacheContent;
+        $this->cacheKeyPrefix = $prefix;
 
         return $this;
     }
@@ -207,5 +221,10 @@ class ClientOptions
     public function usesLowMemoryResourcePool(): bool
     {
         return $this->usesLowMemoryResourcePool;
+    }
+
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
     }
 }

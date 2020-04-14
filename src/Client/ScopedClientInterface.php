@@ -27,4 +27,9 @@ interface ScopedClientInterface
      * Returns the ID of the environment currently in use.
      */
     public function getEnvironmentId(): string;
+
+    /**
+     * @return string
+     */
+    public function getCacheKeyPrefix(): string;
 }
