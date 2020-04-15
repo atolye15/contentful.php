@@ -119,11 +119,6 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     private $richTextParser;
 
     /**
-     * @var string
-     */
-    private $cacheKeyPrefix;
-
-    /**
      * Client constructor.
      *
      * @param string $token         Delivery API Access Token for the space used with this Client
