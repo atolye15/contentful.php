@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Core\Api\Link;
-use Contentful\Core\Api\LinkResolverInterface;
-use Contentful\Core\Resource\ResourceInterface;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\Api\LinkResolverInterface;
+use Atolye15\Core\Resource\ResourceInterface;
 
 class LinkResolver implements LinkResolverInterface
 {

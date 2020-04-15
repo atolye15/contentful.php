@@ -9,15 +9,15 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Core\Api\Link;
-use Contentful\Core\Resource\EntryInterface;
-use Contentful\Core\Resource\ResourceArray;
-use Contentful\Delivery\Client\ClientInterface;
-use Contentful\Delivery\Query;
-use Contentful\Delivery\Resource\ContentType\Field;
-use Contentful\Delivery\SystemProperties\Entry as SystemProperties;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\Resource\EntryInterface;
+use Atolye15\Core\Resource\ResourceArray;
+use Atolye15\Delivery\Client\ClientInterface;
+use Atolye15\Delivery\Query;
+use Atolye15\Delivery\Resource\ContentType\Field;
+use Atolye15\Delivery\SystemProperties\Entry as SystemProperties;
 
 class Entry extends LocalizedResource implements EntryInterface, \ArrayAccess
 {

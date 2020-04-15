@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Resource\ContentType;
+namespace Atolye15\Tests\Delivery\Unit\Resource\ContentType;
 
-use Contentful\Tests\Delivery\Implementation\MockField;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Tests\Delivery\Implementation\MockField;
+use Atolye15\Tests\Delivery\TestCase;
 
 class FieldTest extends TestCase
 {

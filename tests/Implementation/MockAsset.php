@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\SystemProperties\Asset as SystemProperties;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
 
 class MockAsset extends Asset
 {

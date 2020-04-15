@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\ResourcePool;
+namespace Atolye15\Delivery\ResourcePool;
 
-use Contentful\Core\Resource\ResourcePoolInterface;
-use Contentful\Delivery\Client\JsonDecoderClientInterface;
-use Contentful\Delivery\ClientOptions;
+use Atolye15\Core\Resource\ResourcePoolInterface;
+use Atolye15\Delivery\Client\JsonDecoderClientInterface;
+use Atolye15\Delivery\ClientOptions;
 
 /**
  * Factory class.

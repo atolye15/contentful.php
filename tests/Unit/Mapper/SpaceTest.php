@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Unit\Mapper;
+namespace Atolye15\Tests\Unit\Mapper;
 
-use Contentful\Delivery\Mapper\Space as Mapper;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockParser;
-use Contentful\Tests\Delivery\Implementation\MockResourceBuilder;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Mapper\Space as Mapper;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockParser;
+use Atolye15\Tests\Delivery\Implementation\MockResourceBuilder;
+use Atolye15\Tests\Delivery\TestCase;
 
 class SpaceTest extends TestCase
 {

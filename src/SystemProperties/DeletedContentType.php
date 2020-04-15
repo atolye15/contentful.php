@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\SystemProperties;
+namespace Atolye15\Delivery\SystemProperties;
 
 class DeletedContentType extends ContentType
 {

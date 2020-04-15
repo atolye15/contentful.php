@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
-use Contentful\Delivery\Resource\Environment as ResourceClass;
-use Contentful\Delivery\Resource\Locale;
-use Contentful\Delivery\SystemProperties\Environment as SystemProperties;
+use Atolye15\Delivery\Resource\Environment as ResourceClass;
+use Atolye15\Delivery\Resource\Locale;
+use Atolye15\Delivery\SystemProperties\Environment as SystemProperties;
 
 /**
  * Environment class.

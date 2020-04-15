@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
-use Contentful\Core\Api\DateTimeImmutable;
-use Contentful\Core\Api\Link;
-use Contentful\Core\Api\Location;
-use Contentful\Delivery\Resource\ContentType as ResourceContentType;
-use Contentful\Delivery\Resource\Entry as ResourceClass;
-use Contentful\Delivery\SystemProperties\Entry as SystemProperties;
+use Atolye15\Core\Api\DateTimeImmutable;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\Api\Location;
+use Atolye15\Delivery\Resource\ContentType as ResourceContentType;
+use Atolye15\Delivery\Resource\Entry as ResourceClass;
+use Atolye15\Delivery\SystemProperties\Entry as SystemProperties;
 use function GuzzleHttp\json_decode as guzzle_json_decode;
 use function GuzzleHttp\json_encode as guzzle_json_encode;
 

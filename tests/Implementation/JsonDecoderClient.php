@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Client\JsonDecoderClientInterface;
+use Atolye15\Delivery\Client\JsonDecoderClientInterface;
 
 class JsonDecoderClient implements JsonDecoderClientInterface
 {

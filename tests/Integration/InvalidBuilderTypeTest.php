@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Integration;
+namespace Atolye15\Tests\Delivery\Integration;
 
-use Contentful\Delivery\ResourceBuilder;
+use Atolye15\Delivery\ResourceBuilder;
 use Contentful\RichText\Parser;
-use Contentful\Tests\Delivery\Implementation\LinkResolver;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockResourcePool;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Tests\Delivery\Implementation\LinkResolver;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockResourcePool;
+use Atolye15\Tests\Delivery\TestCase;
 
 class InvalidBuilderTypeTest extends TestCase
 {

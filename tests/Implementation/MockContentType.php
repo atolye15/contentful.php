@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\SystemProperties\ContentType as SystemProperties;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\SystemProperties\ContentType as SystemProperties;
 
 class MockContentType extends ContentType
 {

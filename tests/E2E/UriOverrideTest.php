@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Delivery\Client;
-use Contentful\Delivery\ClientOptions;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Client;
+use Atolye15\Delivery\ClientOptions;
+use Atolye15\Tests\Delivery\TestCase;
 
 class UriOverrideTest extends TestCase
 {

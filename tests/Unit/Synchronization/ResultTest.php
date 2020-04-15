@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Synchronization;
+namespace Atolye15\Tests\Delivery\Unit\Synchronization;
 
-use Contentful\Delivery\Synchronization\Result;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Synchronization\Result;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ResultTest extends TestCase
 {

@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Client\ClientInterface;
-use Contentful\Delivery\Resource\Entry;
-use Contentful\Delivery\SystemProperties\Entry as SystemProperties;
+use Atolye15\Delivery\Client\ClientInterface;
+use Atolye15\Delivery\Resource\Entry;
+use Atolye15\Delivery\SystemProperties\Entry as SystemProperties;
 
 class MockEntry extends Entry
 {

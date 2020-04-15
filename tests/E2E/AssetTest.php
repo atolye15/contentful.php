@@ -9,16 +9,16 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Core\File\File;
-use Contentful\Core\File\ImageFile;
-use Contentful\Core\Resource\ResourceArray;
-use Contentful\Delivery\Query;
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\File\File;
+use Atolye15\Core\File\ImageFile;
+use Atolye15\Core\Resource\ResourceArray;
+use Atolye15\Delivery\Query;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Tests\Delivery\TestCase;
 
 class AssetTest extends TestCase
 {

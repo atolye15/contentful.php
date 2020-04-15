@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Resource\DeletedEntry;
+use Atolye15\Delivery\Resource\DeletedEntry;
 
 class MockDeletedEntry extends DeletedEntry
 {

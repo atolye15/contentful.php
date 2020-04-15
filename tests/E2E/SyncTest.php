@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\Resource\DeletedEntry;
-use Contentful\Delivery\Resource\Entry;
-use Contentful\Delivery\Synchronization\Query;
-use Contentful\Delivery\Synchronization\Result;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\Resource\DeletedEntry;
+use Atolye15\Delivery\Resource\Entry;
+use Atolye15\Delivery\Synchronization\Query;
+use Atolye15\Delivery\Synchronization\Result;
+use Atolye15\Tests\Delivery\TestCase;
 
 class SyncTest extends TestCase
 {

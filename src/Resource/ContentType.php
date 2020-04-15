@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Core\Resource\ContentTypeInterface;
-use Contentful\Delivery\Resource\ContentType\Field;
-use Contentful\Delivery\SystemProperties\ContentType as SystemProperties;
+use Atolye15\Core\Resource\ContentTypeInterface;
+use Atolye15\Delivery\Resource\ContentType\Field;
+use Atolye15\Delivery\SystemProperties\ContentType as SystemProperties;
 
 /**
  * Content Types are schemas that define the fields of Entries. Every Entry can only contain values in the fields

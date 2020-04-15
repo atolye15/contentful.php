@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Core\Api\Link;
-use Contentful\Core\File\LocalUploadFile;
-use Contentful\Core\File\RemoteUploadFile;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\File\LocalUploadFile;
+use Atolye15\Core\File\RemoteUploadFile;
+use Atolye15\Tests\Delivery\TestCase;
 
 class UnprocessedFileInPreviewTest extends TestCase
 {

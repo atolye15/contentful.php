@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Synchronization;
+namespace Atolye15\Delivery\Synchronization;
 
-use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
-use Contentful\Delivery\Client\SynchronizationClientInterface;
+use Atolye15\Core\Resource\ResourceInterface;
+use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
+use Atolye15\Delivery\Client\SynchronizationClientInterface;
 
 /**
  * The synchronization Manager can be used to sync a Space to this server.

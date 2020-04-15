@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit;
+namespace Atolye15\Tests\Delivery\Unit;
 
 use Cache\Adapter\PHPArray\ArrayCachePool;
-use Contentful\Delivery\ResourcePool;
-use Contentful\Tests\Delivery\Implementation\JsonDecoderClient;
-use Contentful\Tests\Delivery\Implementation\MockEntry;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\ResourcePool;
+use Atolye15\Tests\Delivery\Implementation\JsonDecoderClient;
+use Atolye15\Tests\Delivery\Implementation\MockEntry;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ResourcePoolTest extends TestCase
 {

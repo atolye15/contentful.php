@@ -9,19 +9,19 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Resource;
+namespace Atolye15\Tests\Delivery\Unit\Resource;
 
-use Contentful\Core\File\FileInterface;
-use Contentful\Core\File\ImageFile;
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Delivery\SystemProperties\Asset as SystemProperties;
-use Contentful\Tests\Delivery\Implementation\MockAsset;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockLocale;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\File\FileInterface;
+use Atolye15\Core\File\ImageFile;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
+use Atolye15\Tests\Delivery\Implementation\MockAsset;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockLocale;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class AssetTest extends TestCase
 {

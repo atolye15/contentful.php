@@ -9,21 +9,21 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Unit\Mapper;
+namespace Atolye15\Tests\Unit\Mapper;
 
-use Contentful\Core\File\File;
-use Contentful\Core\File\ImageFile;
-use Contentful\Core\File\LocalUploadFile;
-use Contentful\Core\File\RemoteUploadFile;
-use Contentful\Delivery\Mapper\Asset as Mapper;
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockLocale;
-use Contentful\Tests\Delivery\Implementation\MockParser;
-use Contentful\Tests\Delivery\Implementation\MockResourceBuilder;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\File\File;
+use Atolye15\Core\File\ImageFile;
+use Atolye15\Core\File\LocalUploadFile;
+use Atolye15\Core\File\RemoteUploadFile;
+use Atolye15\Delivery\Mapper\Asset as Mapper;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockLocale;
+use Atolye15\Tests\Delivery\Implementation\MockParser;
+use Atolye15\Tests\Delivery\Implementation\MockResourceBuilder;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class AssetTest extends TestCase
 {

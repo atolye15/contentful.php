@@ -9,16 +9,16 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit;
+namespace Atolye15\Tests\Delivery\Unit;
 
-use Contentful\Delivery\Client;
-use Contentful\Delivery\ClientOptions;
-use Contentful\Delivery\ResourceBuilder;
-use Contentful\Delivery\ResourcePool\Extended;
-use Contentful\Delivery\ResourcePool\Standard;
-use Contentful\Delivery\Synchronization\Manager;
+use Atolye15\Delivery\Client;
+use Atolye15\Delivery\ClientOptions;
+use Atolye15\Delivery\ResourceBuilder;
+use Atolye15\Delivery\ResourcePool\Extended;
+use Atolye15\Delivery\ResourcePool\Standard;
+use Atolye15\Delivery\Synchronization\Manager;
 use Contentful\RichText\Parser;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ClientTest extends TestCase
 {

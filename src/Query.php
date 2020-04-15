@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery;
+namespace Atolye15\Delivery;
 
-use Contentful\Core\Api\BaseQuery;
+use Atolye15\Core\Api\BaseQuery;
 
 /**
  * A Query is used to filter and order collections when making API requests.

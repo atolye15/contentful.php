@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Cache;
+namespace Atolye15\Delivery\Cache;
 
-use Contentful\Core\Resource\SystemPropertiesInterface;
-use Contentful\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
+use Atolye15\Core\Resource\SystemPropertiesInterface;
+use Atolye15\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
 
 /**
  * CacheClearer class.

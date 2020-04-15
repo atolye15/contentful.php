@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit;
+namespace Atolye15\Tests\Delivery\Unit;
 
-use Contentful\Delivery\ScopedJsonDecoder;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\ScopedJsonDecoder;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ScopedJsonDecoderTest extends TestCase
 {

@@ -9,19 +9,19 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Unit;
+namespace Atolye15\Tests\Unit;
 
-use Contentful\Core\Api\Link;
-use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Delivery\LinkResolver;
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Resource\Entry;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockResourcePool;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\Resource\ResourceInterface;
+use Atolye15\Delivery\LinkResolver;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\Entry;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockResourcePool;
+use Atolye15\Tests\Delivery\TestCase;
 
 class LinkResolverTest extends TestCase
 {

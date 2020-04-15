@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Console;
+namespace Atolye15\Delivery\Console;
 
-use Contentful\Core\Resource\ResourcePoolInterface;
-use Contentful\Delivery\Cache\CacheItemPoolFactoryInterface;
-use Contentful\Delivery\Client;
-use Contentful\Delivery\Client\ClientInterface;
-use Contentful\Delivery\ClientOptions;
+use Atolye15\Core\Resource\ResourcePoolInterface;
+use Atolye15\Delivery\Cache\CacheItemPoolFactoryInterface;
+use Atolye15\Delivery\Client;
+use Atolye15\Delivery\Client\ClientInterface;
+use Atolye15\Delivery\ClientOptions;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
