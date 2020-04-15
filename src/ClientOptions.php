@@ -137,7 +137,7 @@ class ClientOptions
     public function withCache(
         CacheItemPoolInterface $cacheItemPool,
         bool $autoWarmup = false,
-        bool $cacheContent = false
+        bool $cacheContent = false,
         string $prefix = ''
     ): self {
         $this->cacheItemPool = $cacheItemPool;
