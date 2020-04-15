@@ -9,26 +9,26 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Unit\Mapper;
+namespace Atolye15\Tests\Unit\Mapper;
 
-use Contentful\Core\Api\DateTimeImmutable;
-use Contentful\Core\Api\Link;
-use Contentful\Core\Api\Location;
-use Contentful\Core\ResourceBuilder\ObjectHydrator;
-use Contentful\Delivery\Mapper\Entry as Mapper;
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Resource\ContentType\Field;
-use Contentful\Delivery\Resource\Entry;
+use Atolye15\Core\Api\DateTimeImmutable;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\Api\Location;
+use Atolye15\Core\ResourceBuilder\ObjectHydrator;
+use Atolye15\Delivery\Mapper\Entry as Mapper;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\ContentType\Field;
+use Atolye15\Delivery\Resource\Entry;
 use Contentful\RichText\Node\NodeInterface;
 use Contentful\RichText\Node\Text;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockContentType;
-use Contentful\Tests\Delivery\Implementation\MockEntry;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockParser;
-use Contentful\Tests\Delivery\Implementation\MockResourceBuilder;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockContentType;
+use Atolye15\Tests\Delivery\Implementation\MockEntry;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockParser;
+use Atolye15\Tests\Delivery\Implementation\MockResourceBuilder;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class EntryTest extends TestCase
 {

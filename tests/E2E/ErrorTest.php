@@ -9,15 +9,15 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Core\Exception\AccessTokenInvalidException;
-use Contentful\Core\Exception\BadRequestException;
-use Contentful\Core\Exception\InvalidQueryException;
-use Contentful\Core\Exception\NotFoundException;
-use Contentful\Core\Exception\RateLimitExceededException;
-use Contentful\Delivery\Query;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Exception\AccessTokenInvalidException;
+use Atolye15\Core\Exception\BadRequestException;
+use Atolye15\Core\Exception\InvalidQueryException;
+use Atolye15\Core\Exception\NotFoundException;
+use Atolye15\Core\Exception\RateLimitExceededException;
+use Atolye15\Delivery\Query;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ErrorTest extends TestCase
 {

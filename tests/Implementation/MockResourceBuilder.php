@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
+use Atolye15\Core\Resource\ResourceInterface;
+use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
 
 class MockResourceBuilder implements ResourceBuilderInterface
 {

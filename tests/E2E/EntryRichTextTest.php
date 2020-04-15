@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Delivery\Query;
-use Contentful\Delivery\Resource\Entry;
+use Atolye15\Delivery\Query;
+use Atolye15\Delivery\Resource\Entry;
 use Contentful\RichText\Node\Document;
 use Contentful\RichText\Renderer;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Tests\Delivery\TestCase;
 
 class EntryRichTextTest extends TestCase
 {

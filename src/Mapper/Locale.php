@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
-use Contentful\Delivery\Resource\Locale as ResourceClass;
-use Contentful\Delivery\SystemProperties\Locale as SystemProperties;
+use Atolye15\Delivery\Resource\Locale as ResourceClass;
+use Atolye15\Delivery\SystemProperties\Locale as SystemProperties;
 
 /**
  * Locale class.

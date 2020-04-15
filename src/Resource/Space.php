@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Delivery\SystemProperties\Space as SystemProperties;
+use Atolye15\Delivery\SystemProperties\Space as SystemProperties;
 
 /**
  * The Space class represents a single space identified by its ID and holding some metadata.

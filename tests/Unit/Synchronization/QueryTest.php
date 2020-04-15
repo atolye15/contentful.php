@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Synchronization;
+namespace Atolye15\Tests\Delivery\Unit\Synchronization;
 
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Synchronization\Query;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Synchronization\Query;
+use Atolye15\Tests\Delivery\TestCase;
 
 class QueryTest extends TestCase
 {

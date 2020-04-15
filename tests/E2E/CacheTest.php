@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Delivery\Cache\CacheClearer;
-use Contentful\Delivery\Cache\CacheWarmer;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Cache\CacheClearer;
+use Atolye15\Delivery\Cache\CacheWarmer;
+use Atolye15\Tests\Delivery\TestCase;
 use function GuzzleHttp\json_decode as guzzle_json_decode;
 
 class CacheTest extends TestCase

@@ -9,28 +9,28 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Resource;
+namespace Atolye15\Tests\Delivery\Unit\Resource;
 
-use Contentful\Core\Api\DateTimeImmutable;
-use Contentful\Core\Api\Link;
-use Contentful\Core\Exception\NotFoundException;
-use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Delivery\Client\ClientInterface;
-use Contentful\Delivery\Query;
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Resource\Entry;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Delivery\SystemProperties\Entry as SystemProperties;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockClientEntryHas;
-use Contentful\Tests\Delivery\Implementation\MockContentType;
-use Contentful\Tests\Delivery\Implementation\MockEntry;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockField;
-use Contentful\Tests\Delivery\Implementation\MockLocale;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Api\DateTimeImmutable;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\Exception\NotFoundException;
+use Atolye15\Core\Resource\ResourceInterface;
+use Atolye15\Delivery\Client\ClientInterface;
+use Atolye15\Delivery\Query;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\Entry;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Delivery\SystemProperties\Entry as SystemProperties;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockClientEntryHas;
+use Atolye15\Tests\Delivery\Implementation\MockContentType;
+use Atolye15\Tests\Delivery\Implementation\MockEntry;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockField;
+use Atolye15\Tests\Delivery\Implementation\MockLocale;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 

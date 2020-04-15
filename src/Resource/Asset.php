@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Core\File\FileInterface;
-use Contentful\Core\Resource\AssetInterface;
-use Contentful\Delivery\SystemProperties\Asset as SystemProperties;
+use Atolye15\Core\File\FileInterface;
+use Atolye15\Core\Resource\AssetInterface;
+use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
 
 class Asset extends LocalizedResource implements AssetInterface
 {

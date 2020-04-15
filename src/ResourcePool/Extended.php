@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\ResourcePool;
+namespace Atolye15\Delivery\ResourcePool;
 
-use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Delivery\Client\JsonDecoderClientInterface;
+use Atolye15\Core\Resource\ResourceInterface;
+use Atolye15\Delivery\Client\JsonDecoderClientInterface;
 use function GuzzleHttp\json_encode as guzzle_json_encode;
 use Psr\Cache\CacheItemPoolInterface;
 

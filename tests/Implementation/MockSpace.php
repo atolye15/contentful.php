@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Resource\Space;
-use Contentful\Delivery\SystemProperties\Space as SystemProperties;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Delivery\SystemProperties\Space as SystemProperties;
 
 class MockSpace extends Space
 {

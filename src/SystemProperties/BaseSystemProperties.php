@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\SystemProperties;
+namespace Atolye15\Delivery\SystemProperties;
 
-use Contentful\Core\Resource\SystemPropertiesInterface;
+use Atolye15\Core\Resource\SystemPropertiesInterface;
 
 /**
  * A SystemProperties instance contains the metadata of a resource.

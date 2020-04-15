@@ -9,16 +9,16 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Unit\Mapper;
+namespace Atolye15\Tests\Unit\Mapper;
 
-use Contentful\Delivery\Mapper\DeletedAsset as Mapper;
-use Contentful\Delivery\Resource\DeletedAsset;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockParser;
-use Contentful\Tests\Delivery\Implementation\MockResourceBuilder;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Mapper\DeletedAsset as Mapper;
+use Atolye15\Delivery\Resource\DeletedAsset;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockParser;
+use Atolye15\Tests\Delivery\Implementation\MockResourceBuilder;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class DeletedAssetTest extends TestCase
 {

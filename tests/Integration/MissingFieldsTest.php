@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Integration;
+namespace Atolye15\Tests\Delivery\Integration;
 
-use Contentful\Delivery\ClientOptions;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\ClientOptions;
+use Atolye15\Tests\Delivery\TestCase;
 
 class MissingFieldsTest extends TestCase
 {

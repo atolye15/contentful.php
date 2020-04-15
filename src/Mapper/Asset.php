@@ -9,16 +9,16 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
-use Contentful\Core\Api\Link;
-use Contentful\Core\File\File;
-use Contentful\Core\File\FileInterface;
-use Contentful\Core\File\ImageFile;
-use Contentful\Core\File\LocalUploadFile;
-use Contentful\Core\File\RemoteUploadFile;
-use Contentful\Delivery\Resource\Asset as ResourceClass;
-use Contentful\Delivery\SystemProperties\Asset as SystemProperties;
+use Atolye15\Core\Api\Link;
+use Atolye15\Core\File\File;
+use Atolye15\Core\File\FileInterface;
+use Atolye15\Core\File\ImageFile;
+use Atolye15\Core\File\LocalUploadFile;
+use Atolye15\Core\File\RemoteUploadFile;
+use Atolye15\Delivery\Resource\Asset as ResourceClass;
+use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
 
 /**
  * Asset class.

@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery;
+namespace Atolye15\Tests\Delivery;
 
 use Cache\Adapter\PHPArray\ArrayCachePool;
-use Contentful\Delivery\Client;
-use Contentful\Delivery\Client\JsonDecoderClientInterface;
-use Contentful\Delivery\ClientOptions;
-use Contentful\Tests\TestCase as BaseTestCase;
+use Atolye15\Delivery\Client;
+use Atolye15\Delivery\Client\JsonDecoderClientInterface;
+use Atolye15\Delivery\ClientOptions;
+use Atolye15\Tests\TestCase as BaseTestCase;
 use Psr\Cache\CacheItemPoolInterface;
 
 class TestCase extends BaseTestCase

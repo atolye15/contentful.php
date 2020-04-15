@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Integration;
+namespace Atolye15\Tests\Delivery\Integration;
 
-use Contentful\Core\Resource\ResourceArray;
-use Contentful\Delivery\Client\JsonDecoderClientInterface;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Resource\ResourceArray;
+use Atolye15\Delivery\Client\JsonDecoderClientInterface;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ParseJsonTest extends TestCase
 {

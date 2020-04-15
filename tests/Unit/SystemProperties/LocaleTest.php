@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\SystemProperties;
+namespace Atolye15\Tests\Delivery\Unit\SystemProperties;
 
-use Contentful\Delivery\SystemProperties\Locale;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\SystemProperties\Locale;
+use Atolye15\Tests\Delivery\TestCase;
 
 class LocaleTest extends TestCase
 {

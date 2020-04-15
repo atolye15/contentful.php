@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\LocalizedResource;
-use Contentful\Delivery\SystemProperties\Entry as SystemProperties;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\LocalizedResource;
+use Atolye15\Delivery\SystemProperties\Entry as SystemProperties;
 
 class MockLocalizedResource extends LocalizedResource
 {

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
 /**
  * A DeletedResource encodes metadata about a deleted resource.

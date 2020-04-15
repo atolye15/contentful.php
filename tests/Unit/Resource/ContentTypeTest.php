@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Resource;
+namespace Atolye15\Tests\Delivery\Unit\Resource;
 
-use Contentful\Delivery\SystemProperties\ContentType as SystemProperties;
-use Contentful\Tests\Delivery\Implementation\MockContentType;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockField;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\SystemProperties\ContentType as SystemProperties;
+use Atolye15\Tests\Delivery\Implementation\MockContentType;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockField;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ContentTypeTest extends TestCase
 {

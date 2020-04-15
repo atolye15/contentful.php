@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Core\Resource\ResourceArray;
-use Contentful\Delivery\Query;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Resource\ResourceArray;
+use Atolye15\Delivery\Query;
+use Atolye15\Tests\Delivery\TestCase;
 
 class EntryLocaleTest extends TestCase
 {

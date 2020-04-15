@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
 use Cache\Adapter\PHPArray\ArrayCachePool;
-use Contentful\Delivery\Cache\CacheItemPoolFactoryInterface;
+use Atolye15\Delivery\Cache\CacheItemPoolFactoryInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 class CacheItemPoolFactory implements CacheItemPoolFactoryInterface

@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Synchronization;
+namespace Atolye15\Delivery\Synchronization;
 
-use Contentful\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\ContentType;
 
 /**
  * A sync Query can be used to limit what type of resources and events should be synced.

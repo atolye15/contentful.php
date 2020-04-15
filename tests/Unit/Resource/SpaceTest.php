@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\Resource;
+namespace Atolye15\Tests\Delivery\Unit\Resource;
 
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class SpaceTest extends TestCase
 {

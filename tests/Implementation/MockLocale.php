@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Implementation;
+namespace Atolye15\Tests\Delivery\Implementation;
 
-use Contentful\Delivery\Resource\Locale;
-use Contentful\Delivery\SystemProperties\Locale as SystemProperties;
+use Atolye15\Delivery\Resource\Locale;
+use Atolye15\Delivery\SystemProperties\Locale as SystemProperties;
 
 class MockLocale extends Locale
 {

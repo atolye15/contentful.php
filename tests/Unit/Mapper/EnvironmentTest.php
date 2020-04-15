@@ -9,15 +9,15 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Unit\Mapper;
+namespace Atolye15\Tests\Unit\Mapper;
 
-use Contentful\Delivery\Mapper\Environment as Mapper;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Locale;
-use Contentful\Tests\Delivery\Implementation\MockClient;
-use Contentful\Tests\Delivery\Implementation\MockParser;
-use Contentful\Tests\Delivery\Implementation\MockResourceBuilder;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Mapper\Environment as Mapper;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Locale;
+use Atolye15\Tests\Delivery\Implementation\MockClient;
+use Atolye15\Tests\Delivery\Implementation\MockParser;
+use Atolye15\Tests\Delivery\Implementation\MockResourceBuilder;
+use Atolye15\Tests\Delivery\TestCase;
 
 class EnvironmentTest extends TestCase
 {

@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Synchronization;
+namespace Atolye15\Delivery\Synchronization;
 
-use Contentful\Core\Resource\ResourceInterface;
+use Atolye15\Core\Resource\ResourceInterface;
 
 /**
  * The Result of synchronization.

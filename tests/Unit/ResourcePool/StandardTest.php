@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\ResourcePool;
+namespace Atolye15\Tests\Delivery\Unit\ResourcePool;
 
-use Contentful\Delivery\ResourcePool\Standard;
-use Contentful\Tests\Delivery\Implementation\MockContentType;
-use Contentful\Tests\Delivery\Implementation\MockEntry;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\ResourcePool\Standard;
+use Atolye15\Tests\Delivery\Implementation\MockContentType;
+use Atolye15\Tests\Delivery\Implementation\MockEntry;
+use Atolye15\Tests\Delivery\TestCase;
 
 class StandardTest extends TestCase
 {

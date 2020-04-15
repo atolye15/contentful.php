@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Core\Resource\ResourceArray;
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Core\Resource\ResourceArray;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Tests\Delivery\TestCase;
 
 class ContentTypeTest extends TestCase
 {

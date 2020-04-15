@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\ResourcePool;
+namespace Atolye15\Tests\Delivery\Unit\ResourcePool;
 
-use Contentful\Delivery\ClientOptions;
-use Contentful\Delivery\ResourcePool\Extended;
-use Contentful\Delivery\ResourcePool\Factory;
-use Contentful\Delivery\ResourcePool\Standard;
-use Contentful\Tests\Delivery\Implementation\JsonDecoderClient;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\ClientOptions;
+use Atolye15\Delivery\ResourcePool\Extended;
+use Atolye15\Delivery\ResourcePool\Factory;
+use Atolye15\Delivery\ResourcePool\Standard;
+use Atolye15\Tests\Delivery\Implementation\JsonDecoderClient;
+use Atolye15\Tests\Delivery\TestCase;
 
 class FactoryTest extends TestCase
 {

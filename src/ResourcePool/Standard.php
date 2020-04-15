@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\ResourcePool;
+namespace Atolye15\Delivery\ResourcePool;
 
-use Contentful\Core\Resource\BaseResourcePool;
-use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
+use Atolye15\Core\Resource\BaseResourcePool;
+use Atolye15\Core\Resource\ResourceInterface;
+use Atolye15\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
 
 /**
  * Standard class.

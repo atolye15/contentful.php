@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\E2E;
+namespace Atolye15\Tests\Delivery\E2E;
 
-use Contentful\Delivery\Console\Application;
-use Contentful\Tests\Delivery\Implementation\CacheItemPoolFactory;
-use Contentful\Tests\Delivery\Implementation\NotWorkingCachePoolFactory;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\Console\Application;
+use Atolye15\Tests\Delivery\Implementation\CacheItemPoolFactory;
+use Atolye15\Tests\Delivery\Implementation\NotWorkingCachePoolFactory;
+use Atolye15\Tests\Delivery\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 class ConsoleTest extends TestCase

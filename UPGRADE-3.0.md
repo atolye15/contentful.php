@@ -9,7 +9,7 @@ The `uriOverride` key in the options array has been renamed to `baseUri`, to bet
 ``` php
 <?php
 
-use Contentful\Delivery\Client;
+use Atolye15\Delivery\Client;
 
 // Previously
 $client = new Client($accessToken, $spaceId, $usePreview = false, $defaultLocale = null, $options = ['uriOverride' => '...']);
@@ -92,7 +92,7 @@ To implement the cache warming and clearing through CLI, you need to define a fa
 
 namespace App\Cache;
 
-use Contentful\Delivery\Cache\CacheItemPoolFactoryInterface;
+use Atolye15\Delivery\Cache\CacheItemPoolFactoryInterface;
 use Psr\Cache\CacheItemPoolInterface;
 
 class AppCacheFactory extends CacheItemPoolFactoryInterface
@@ -188,7 +188,7 @@ The SDK no longer uses a custom logging system, and is instead PSR-3 compatible.
 ``` php
 <?php
 
-use Contentful\Delivery\Client;
+use Atolye15\Delivery\Client;
 
 $client = new Client(
     $accessToken,

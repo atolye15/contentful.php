@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Tests\Delivery\Unit\SystemProperties;
+namespace Atolye15\Tests\Delivery\Unit\SystemProperties;
 
-use Contentful\Delivery\SystemProperties\DeletedAsset;
-use Contentful\Tests\Delivery\Implementation\MockEnvironment;
-use Contentful\Tests\Delivery\Implementation\MockSpace;
-use Contentful\Tests\Delivery\TestCase;
+use Atolye15\Delivery\SystemProperties\DeletedAsset;
+use Atolye15\Tests\Delivery\Implementation\MockEnvironment;
+use Atolye15\Tests\Delivery\Implementation\MockSpace;
+use Atolye15\Tests\Delivery\TestCase;
 
 class DeletedAssetTest extends TestCase
 {
