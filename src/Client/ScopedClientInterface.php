@@ -15,21 +15,27 @@ interface ScopedClientInterface
 {
     /**
      * Returns a string representation of the API currently in use.
+     *
+     * @return string
      */
     public function getApi(): string;
 
     /**
      * Returns the ID of the space currently in use.
+     *
+     * @return string
      */
     public function getSpaceId(): string;
 
     /**
      * Returns the ID of the environment currently in use.
+     *
+     * @return string
      */
     public function getEnvironmentId(): string;
 
     /**
-     * Returns the user defined cache key prefix.
+     * Returns the cache prefix key user defined.
      */
     public function getCacheKeyPrefix(): string;
 }

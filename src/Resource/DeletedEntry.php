@@ -34,6 +34,8 @@ class DeletedEntry extends DeletedResource
     /**
      * This method always returns null when used with the sync API.
      * It does return a value when parsing a webhook response.
+     *
+     * @return ContentType
      */
     public function getContentType(): ContentType
     {

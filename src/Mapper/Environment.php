@@ -19,7 +19,7 @@ use Atolye15\Delivery\SystemProperties\Environment as SystemProperties;
  * Environment class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\Environment.
+ * of class Atolye15\Delivery\Resource\Environment.
  */
 class Environment extends BaseMapper
 {

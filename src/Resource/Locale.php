@@ -41,7 +41,7 @@ class Locale extends BaseResource
     /**
      * @var bool
      */
-    protected $default = false;
+    protected $default = \false;
 
     /**
      * {@inheritdoc}
@@ -53,6 +53,8 @@ class Locale extends BaseResource
 
     /**
      * Returns the locale code.
+     *
+     * @return string
      */
     public function getCode(): string
     {
@@ -61,6 +63,8 @@ class Locale extends BaseResource
 
     /**
      * Returns the human readable name.
+     *
+     * @return string
      */
     public function getName(): string
     {
@@ -69,6 +73,8 @@ class Locale extends BaseResource
 
     /**
      * Returns true if this is the default locale for the space.
+     *
+     * @return bool
      */
     public function isDefault(): bool
     {

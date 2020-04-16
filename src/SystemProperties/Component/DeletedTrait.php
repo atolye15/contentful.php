@@ -20,11 +20,17 @@ trait DeletedTrait
      */
     protected $deletedAt;
 
+    /**
+     * @param array $data
+     */
     protected function initDeletedAt(array $data)
     {
         $this->deletedAt = new DateTimeImmutable($data['deletedAt']);
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeDeletedAt(): array
     {
         return [
@@ -32,6 +38,9 @@ trait DeletedTrait
         ];
     }
 
+    /**
+     * @return DateTimeImmutable
+     */
     public function getDeletedAt(): DateTimeImmutable
     {
         return $this->deletedAt;

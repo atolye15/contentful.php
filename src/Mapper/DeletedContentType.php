@@ -18,7 +18,7 @@ use Atolye15\Delivery\SystemProperties\DeletedContentType as SystemProperties;
  * DeletedContentType class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\DeletedContentType.
+ * of class Atolye15\Delivery\Resource\DeletedContentType.
  */
 class DeletedContentType extends BaseMapper
 {

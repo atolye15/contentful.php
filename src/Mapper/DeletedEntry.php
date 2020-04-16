@@ -23,7 +23,7 @@ use Contentful\RichText\ParserInterface;
  * DeletedEntry class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\DeletedEntry.
+ * of class Atolye15\Delivery\Resource\DeletedEntry.
  */
 class DeletedEntry extends BaseMapper
 {

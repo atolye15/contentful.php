@@ -24,7 +24,7 @@ use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
  * Asset class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\Asset.
+ * of class Atolye15\Delivery\Resource\Asset.
  */
 class Asset extends BaseMapper
 {
@@ -42,13 +42,13 @@ class Asset extends BaseMapper
             'sys' => $sys,
             'title' => isset($data['fields']['title'])
                 ? $this->normalizeFieldData($data['fields']['title'], $locale)
-                : null,
+                : \null,
             'description' => isset($data['fields']['description'])
                 ? $this->normalizeFieldData($data['fields']['description'], $locale)
-                : null,
+                : \null,
             'file' => isset($data['fields']['file'])
                 ? \array_map([$this, 'buildFile'], $this->normalizeFieldData($data['fields']['file'], $locale))
-                : null,
+                : \null,
         ]);
 
         $asset->initLocales($asset->getSystemProperties()->getEnvironment()->getLocales());
@@ -58,6 +58,10 @@ class Asset extends BaseMapper
 
     /**
      * Creates a File or a subclass thereof.
+     *
+     * @param array $data
+     *
+     * @return FileInterface
      */
     protected function buildFile(array $data): FileInterface
     {

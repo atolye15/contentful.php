@@ -24,8 +24,10 @@ class CacheClearer extends BaseCacheHandler
 {
     /**
      * @param bool $cacheContent
+     *
+     * @return bool
      */
-    public function clear($cacheContent = false): bool
+    public function clear($cacheContent = \false): bool
     {
         $keys = [];
         foreach ($this->fetchResources($cacheContent) as $resource) {

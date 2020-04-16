@@ -46,6 +46,10 @@ abstract class BaseMapper implements MapperInterface
 
     /**
      * BaseMapper constructor.
+     *
+     * @param ResourceBuilderInterface $builder
+     * @param ClientInterface          $client
+     * @param ParserInterface          $richTextParser
      */
     public function __construct(ResourceBuilderInterface $builder, ClientInterface $client, ParserInterface $richTextParser)
     {
@@ -55,6 +59,12 @@ abstract class BaseMapper implements MapperInterface
         $this->hydrator = new ObjectHydrator();
     }
 
+    /**
+     * @param string $class
+     * @param array  $data
+     *
+     * @return SystemPropertiesInterface
+     */
     protected function createSystemProperties(string $class, array $data): SystemPropertiesInterface
     {
         $sys = $data['sys'];
@@ -75,11 +85,12 @@ abstract class BaseMapper implements MapperInterface
     }
 
     /**
-     * @param mixed $fieldData
+     * @param mixed       $fieldData
+     * @param string|null $locale
      *
      * @return array
      */
-    protected function normalizeFieldData($fieldData, string $locale = null)
+    protected function normalizeFieldData($fieldData, string $locale = \null)
     {
         if (!$locale) {
             return $fieldData;

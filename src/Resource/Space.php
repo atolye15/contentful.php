@@ -38,6 +38,8 @@ class Space extends BaseResource
 
     /**
      * Returns the name of this space.
+     *
+     * @return string
      */
     public function getName(): string
     {

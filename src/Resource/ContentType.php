@@ -64,6 +64,8 @@ class ContentType extends BaseResource implements ContentTypeInterface
 
     /**
      * Returns the space this content type belongs to.
+     *
+     * @return Space
      */
     public function getSpace(): Space
     {
@@ -72,6 +74,8 @@ class ContentType extends BaseResource implements ContentTypeInterface
 
     /**
      * Returns the environment this content type belongs to.
+     *
+     * @return Environment
      */
     public function getEnvironment(): Environment
     {
@@ -80,6 +84,8 @@ class ContentType extends BaseResource implements ContentTypeInterface
 
     /**
      * Returns the name of this content type.
+     *
+     * @return string
      */
     public function getName(): string
     {
@@ -112,9 +118,12 @@ class ContentType extends BaseResource implements ContentTypeInterface
      *
      * If the field does not exist, null is returned.
      *
+     * @param string $fieldId
+     * @param bool   $tryCaseInsensitive
+     *
      * @return Field|null
      */
-    public function getField(string $fieldId, bool $tryCaseInsensitive = false)
+    public function getField(string $fieldId, bool $tryCaseInsensitive = \false)
     {
         if (isset($this->fields[$fieldId])) {
             return $this->fields[$fieldId];
@@ -128,7 +137,7 @@ class ContentType extends BaseResource implements ContentTypeInterface
             }
         }
 
-        return null;
+        return \null;
     }
 
     /**
@@ -140,8 +149,8 @@ class ContentType extends BaseResource implements ContentTypeInterface
      */
     public function getDisplayField()
     {
-        if (null === $this->displayField) {
-            return null;
+        if (\null === $this->displayField) {
+            return \null;
         }
 
         return $this->getField($this->displayField);
@@ -149,6 +158,10 @@ class ContentType extends BaseResource implements ContentTypeInterface
 
     /**
      * Adds a runtime field, of type unknown.
+     *
+     * @param string $name
+     *
+     * @return Field
      */
     public function addUnknownField(string $name): Field
     {

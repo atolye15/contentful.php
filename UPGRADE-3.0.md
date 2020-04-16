@@ -2,7 +2,7 @@
 
 ## Change of signature of client constructor
 
-The `Contentful\Delivery\Client` constructor now takes a new third argument, called `$environmentId`, which defaults to `master`. All remaining parameters have shifted to the right, so for instance the flag for using the Preview API will now be parameter 4 instead of 3.
+The `Atolye15\Delivery\Client` constructor now takes a new third argument, called `$environmentId`, which defaults to `master`. All remaining parameters have shifted to the right, so for instance the flag for using the Preview API will now be parameter 4 instead of 3.
 
 The `uriOverride` key in the options array has been renamed to `baseUri`, to better reflect its meaning and conform to the terminology actually used by the underlying Guzzle client.
 
@@ -30,52 +30,52 @@ While in a process of restructuring the SDK, a number of classes were moved to a
 }
 ```
 
-These resource classes have been moved to the `Contentful\Delivery\Resource` namespace:
+These resource classes have been moved to the `Atolye15\Delivery\Resource` namespace:
 
 | Before                                                   | After                                             |
 | -------------------------------------------------------- | ------------------------------------------------- |
-| `Contentful\Delivery\DynamicEntry`                       | `Contentful\Delivery\Resource\Entry`              |
-| `Contentful\Delivery\Asset`                              | `Contentful\Delivery\Resource\Asset`              |
-| `Contentful\Delivery\ContentType`                        | `Contentful\Delivery\Resource\ContentType`        |
-| `Contentful\Delivery\ContentTypeField`                   | `Contentful\Delivery\Resource\ContentType\Field`  |
-| `Contentful\Delivery\Space`                              | `Contentful\Delivery\Resource\Space`              |
-| `Contentful\Delivery\Locale`                             | `Contentful\Delivery\Resource\Locale`             |
-| `Contentful\Delivery\Synchronization\DeletedResource`    | `Contentful\Delivery\Resource\DeletedResource`    |
-| `Contentful\Delivery\Synchronization\DeletedAsset`       | `Contentful\Delivery\Resource\DeletedAsset`       |
-| `Contentful\Delivery\Synchronization\DeletedContentType` | `Contentful\Delivery\Resource\DeletedContentType` |
-| `Contentful\Delivery\Synchronization\DeletedEntry`       | `Contentful\Delivery\Resource\DeletedEntry`       |
+| `Atolye15\Delivery\DynamicEntry`                       | `Atolye15\Delivery\Resource\Entry`              |
+| `Atolye15\Delivery\Asset`                              | `Atolye15\Delivery\Resource\Asset`              |
+| `Atolye15\Delivery\ContentType`                        | `Atolye15\Delivery\Resource\ContentType`        |
+| `Atolye15\Delivery\ContentTypeField`                   | `Atolye15\Delivery\Resource\ContentType\Field`  |
+| `Atolye15\Delivery\Space`                              | `Atolye15\Delivery\Resource\Space`              |
+| `Atolye15\Delivery\Locale`                             | `Atolye15\Delivery\Resource\Locale`             |
+| `Atolye15\Delivery\Synchronization\DeletedResource`    | `Atolye15\Delivery\Resource\DeletedResource`    |
+| `Atolye15\Delivery\Synchronization\DeletedAsset`       | `Atolye15\Delivery\Resource\DeletedAsset`       |
+| `Atolye15\Delivery\Synchronization\DeletedContentType` | `Atolye15\Delivery\Resource\DeletedContentType` |
+| `Atolye15\Delivery\Synchronization\DeletedEntry`       | `Atolye15\Delivery\Resource\DeletedEntry`       |
 
 These classes have been moved to a separate package, which is required from the SDK, but places classes in a different namespace:
 
 | Before                                             | After                                                   |
 | -------------------------------------------------- | ------------------------------------------------------- |
-| `Contentful\Exception\AccessTokenInvalidException` | `Contentful\Core\Exception\AccessTokenInvalidException` |
-| `Contentful\Exception\ApiException`                | `Contentful\Core\Api\Exception`                         |
-| `Contentful\Exception\BadRequestException`         | `Contentful\Core\Exception\BadRequestException`         |
-| `Contentful\Exception\InvalidQueryException`       | `Contentful\Core\Exception\InvalidQueryException`       |
-| `Contentful\Exception\NotFoundException`           | `Contentful\Core\Exception\NotFoundException`           |
-| `Contentful\Exception\RateLimitExceededException`  | `Contentful\Core\Exception\RateLimitExceededException`  |
-| `Contentful\File\File`                             | `Contentful\Core\File\File`                             |
-| `Contentful\File\FileInterface`                    | `Contentful\Core\File\FileInterface`                    |
-| `Contentful\File\ImageFile`                        | `Contentful\Core\File\ImageFile`                        |
-| `Contentful\File\ImageOptions`                     | `Contentful\Core\File\ImageOptions`                     |
-| `Contentful\File\LocalUploadFile`                  | `Contentful\Core\File\LocalUploadFile`                  |
-| `Contentful\File\RemoteUploadFile`                 | `Contentful\Core\File\RemoteUploadFile`                 |
-| `Contentful\File\UnprocessedFileInterface`         | `Contentful\Core\File\UnprocessedFileInterface`         |
-| `Contentful\Link`                                  | `Contentful\Core\Api\Link`                              |
-| `Contentful\Location`                              | `Contentful\Core\Api\Location`                          |
-| `Contentful\ResourceArray`                         | `Contentful\Core\Resource\ResourceArray`                |
+| `Atolye15\Exception\AccessTokenInvalidException` | `Contentful\Core\Exception\AccessTokenInvalidException` |
+| `Atolye15\Exception\ApiException`                | `Contentful\Core\Api\Exception`                         |
+| `Atolye15\Exception\BadRequestException`         | `Contentful\Core\Exception\BadRequestException`         |
+| `Atolye15\Exception\InvalidQueryException`       | `Contentful\Core\Exception\InvalidQueryException`       |
+| `Atolye15\Exception\NotFoundException`           | `Contentful\Core\Exception\NotFoundException`           |
+| `Atolye15\Exception\RateLimitExceededException`  | `Contentful\Core\Exception\RateLimitExceededException`  |
+| `Atolye15\File\File`                             | `Contentful\Core\File\File`                             |
+| `Atolye15\File\FileInterface`                    | `Contentful\Core\File\FileInterface`                    |
+| `Atolye15\File\ImageFile`                        | `Contentful\Core\File\ImageFile`                        |
+| `Atolye15\File\ImageOptions`                     | `Contentful\Core\File\ImageOptions`                     |
+| `Atolye15\File\LocalUploadFile`                  | `Contentful\Core\File\LocalUploadFile`                  |
+| `Atolye15\File\RemoteUploadFile`                 | `Contentful\Core\File\RemoteUploadFile`                 |
+| `Atolye15\File\UnprocessedFileInterface`         | `Contentful\Core\File\UnprocessedFileInterface`         |
+| `Atolye15\Link`                                  | `Contentful\Core\Api\Link`                              |
+| `Atolye15\Location`                              | `Contentful\Core\Api\Location`                          |
+| `Atolye15\ResourceArray`                         | `Contentful\Core\Resource\ResourceArray`                |
 
 ## Changes in `Client::reviveJson()`
 
-`Client::reviveJson()` was a method that allowed you to parse a JSON string that is in a format recognized from the SDK, and turn it into a resource object. In order to better reflect its meaning, it was renamed to `Client::parseJson()`. Previously it would throw a custom exception of type `Contentful\Exception\SpaceMismatchException`, which has since been removed; instead, if trying to parse a JSON string with unrecognized space or environment ID, an exception of type `\InvalidArgumentException` will now be thrown.
+`Client::reviveJson()` was a method that allowed you to parse a JSON string that is in a format recognized from the SDK, and turn it into a resource object. In order to better reflect its meaning, it was renamed to `Client::parseJson()`. Previously it would throw a custom exception of type `Atolye15\Exception\SpaceMismatchException`, which has since been removed; instead, if trying to parse a JSON string with unrecognized space or environment ID, an exception of type `\InvalidArgumentException` will now be thrown.
 
 ## Removal of EntryInterface and other deprecated classes
 
-* `Contentful\Delivery\EntryInterface` has been removed. If you need, use directly `Contentful\Delivery\Resource\Entry` for type hinting.
-* `Contentful\JsonHelper` (deprecated since 2.2): it was a class used internally and this should not have effects on users' codebases, however if for whatever reason you were using it, you should replace `JsonHelper::decode()` with `GuzzleHttp\json_decode()` and `JsonHelper::encode()` with `GuzzleHttp\json_decode()`, which wrap PHP standard functions in order to provide better error handling.
-* `Contentful\DateHelper` (deprecated since 2.2): if you were using `DateHelper::formatForJson()` directly, replace those uses with `Contentful\format_date_for_json()`, which provides the same features.
-* `Contentful\File\UploadFile` (deprecated since 2.1): if you were using this class for type hinting, you should replace it with `Contentful\Core\File\RemoteUploadFile`. This class provides the same function, and it's just a renamed version of the previous one, to better differentiate between that and `LocalUploadFile`. In fact, `UploadFile` was actually already an empty class extending `RemoteUploadFile`.
+* `Atolye15\Delivery\EntryInterface` has been removed. If you need, use directly `Atolye15\Delivery\Resource\Entry` for type hinting.
+* `Atolye15\JsonHelper` (deprecated since 2.2): it was a class used internally and this should not have effects on users' codebases, however if for whatever reason you were using it, you should replace `JsonHelper::decode()` with `GuzzleHttp\json_decode()` and `JsonHelper::encode()` with `GuzzleHttp\json_decode()`, which wrap PHP standard functions in order to provide better error handling.
+* `Atolye15\DateHelper` (deprecated since 2.2): if you were using `DateHelper::formatForJson()` directly, replace those uses with `Atolye15\format_date_for_json()`, which provides the same features.
+* `Atolye15\File\UploadFile` (deprecated since 2.1): if you were using this class for type hinting, you should replace it with `Contentful\Core\File\RemoteUploadFile`. This class provides the same function, and it's just a renamed version of the previous one, to better differentiate between that and `LocalUploadFile`. In fact, `UploadFile` was actually already an empty class extending `RemoteUploadFile`.
 
 ## Updated cache mechanism
 
@@ -85,7 +85,7 @@ To warm up the cache using the new system, you have 2 options: CLI and code.
 
 ### CLI
 
-To implement the cache warming and clearing through CLI, you need to define a factory which implements `Contentful\Delivery\Cache\CacheItemPoolFactoryInterface`:
+To implement the cache warming and clearing through CLI, you need to define a factory which implements `Atolye15\Delivery\Cache\CacheItemPoolFactoryInterface`:
 
 ``` php
 <?php
@@ -144,20 +144,20 @@ You should provide a fully-qualified class name of your factory, i.e. something 
 
 ### Code
 
-Behind the scenes, the CLI is actually using the class `Contentful\Delivery\Cache\CacheWarmer` to handle the process, so if you have special needs, you can use that yourself:
+Behind the scenes, the CLI is actually using the class `Atolye15\Delivery\Cache\CacheWarmer` to handle the process, so if you have special needs, you can use that yourself:
 
 ``` php
 <?php
 
-/** @var $client \Contentful\Delivery\Client */
+/** @var $client \Atolye15\Delivery\Client */
 /** @var $$cacheItemPool \Psr\Cache\CacheItemPoolInterface */
 
 // To warm up the cache
-$warmer = new \Contentful\Delivery\Cache\CacheWarmer($client, $cacheItemPool);
+$warmer = new \Atolye15\Delivery\Cache\CacheWarmer($client, $cacheItemPool);
 $warmer->warmUp();
 
 // To clear the cache
-$clearer = new \Contentful\Delivery\Cache\CacheClearer($client, $cacheItemPool);
+$clearer = new \Atolye15\Delivery\Cache\CacheClearer($client, $cacheItemPool);
 $clearer->clear();
 ```
 
@@ -168,7 +168,7 @@ Finally, you need to tell the client to use that cache. To do so, pass a `Psr\Ca
 ``` php
 <?php
 
-$client = new \Contentful\Delivery\Client(
+$client = new \Atolye15\Delivery\Client(
     $token,
     $spaceId,
     $environmentId = 'master',
@@ -204,7 +204,7 @@ $client = new Client(
 
 The SDK currently only uses two levels of logging: `INFO` for regular requests, and `ERROR` for requests in the `400` and `500` range.
 
-The previous mechanism allowed you to optionally pass an instance of `Contentful\Log\ArrayLogger` in order to store information about the requests you made. This behavior is now built-in and you don't have to do anything manually. You can simply use `Client::getMessages()` to access an array of `Contentful\Core\Api\Message` objects, which contain useful information for debugging, such as the raw PSR-7 requests and response objects, the duration of the API call, and the exception object generated from the response (if any).
+The previous mechanism allowed you to optionally pass an instance of `Atolye15\Log\ArrayLogger` in order to store information about the requests you made. This behavior is now built-in and you don't have to do anything manually. You can simply use `Client::getMessages()` to access an array of `Contentful\Core\Api\Message` objects, which contain useful information for debugging, such as the raw PSR-7 requests and response objects, the duration of the API call, and the exception object generated from the response (if any).
 
 Because of how PSR-3 loggers work, message objects are serialized as JSON strings before being sent to the logger. You can use `Message::createFromString($json)` to reconstruct the original message object, but bear in mind that some bits of information get lost in the serialization process, such as the difference between `http` and `https` in the request host, and the trace data of the exception.
 
@@ -264,7 +264,7 @@ $entry->getName('it-IT'); // Casa
 
 ### Removed shortcuts from resource classes
 
-`Asset`, `ContentType`, `Entry`, and `DeletedResource` classes previously provided shortcut methods for accessing system properties such as revision, createdAt, etc. These shortcut methods have been removed from the main resource, but they're still accessible through a `Contentful\Delivery\SystemProperties` object.
+`Asset`, `ContentType`, `Entry`, and `DeletedResource` classes previously provided shortcut methods for accessing system properties such as revision, createdAt, etc. These shortcut methods have been removed from the main resource, but they're still accessible through a `Atolye15\Delivery\SystemProperties` object.
 
 ``` php
 // Before

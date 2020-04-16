@@ -17,6 +17,8 @@ class Entry extends LocalizedResource
 
     /**
      * Entry constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {

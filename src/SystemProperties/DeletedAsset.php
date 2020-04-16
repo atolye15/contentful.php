@@ -17,6 +17,8 @@ class DeletedAsset extends Asset
 
     /**
      * DeletedAsset constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {

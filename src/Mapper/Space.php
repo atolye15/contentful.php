@@ -18,7 +18,7 @@ use Atolye15\Delivery\SystemProperties\Space as SystemProperties;
  * Space class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\Space.
+ * of class Atolye15\Delivery\Resource\Space.
  */
 class Space extends BaseMapper
 {

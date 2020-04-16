@@ -19,7 +19,7 @@ use Atolye15\Delivery\ResourcePool\Extended;
  * This class acts as a registry for current objects managed by the Client.
  * It also abstracts access to objects stored in cache.
  *
- * @deprecated 4.1 use Atolye15\Delivery\ResourcePool\Extended instead
+ * @deprecated 4.1 Use Atolye15\Delivery\ResourcePool\Extended instead
  */
 class ResourcePool extends Extended
 {

@@ -16,7 +16,7 @@ use Atolye15\Delivery\Resource\ContentType;
 /**
  * A sync Query can be used to limit what type of resources and events should be synced.
  *
- * @see \Contentful\Delivery\Synchronization\Mananager Synchronization\Mananager
+ * @see \Atolye15\Delivery\Synchronization\Mananager Synchronization\Mananager
  */
 class Query
 {
@@ -36,12 +36,14 @@ class Query
 
     /**
      * Returns the parameters to execute this query.
+     *
+     * @return array
      */
     public function getQueryData(): array
     {
         $data = [
             'initial' => 'true',
-            'type' => 'all' !== $this->type ? $this->type : null,
+            'type' => 'all' !== $this->type ? $this->type : \null,
             'content_type' => $this->contentType,
         ];
 
@@ -50,6 +52,8 @@ class Query
 
     /**
      * The urlencoded query string for this query.
+     *
+     * @return string
      */
     public function getQueryString(): string
     {
@@ -69,15 +73,20 @@ class Query
      *  - DeletedAsset
      *  - DeletedEntry
      *
+     * @param string|null $type
+     *
      * @throws \InvalidArgumentException when an invalid $type is set
      *
      * @return $this
      */
-    public function setType(string $type = null)
+    public function setType(string $type = \null)
     {
         $validTypes = ['all', 'Asset', 'Entry', 'Deletion', 'DeletedAsset', 'DeletedEntry'];
-        if (!\in_array($type, $validTypes, true)) {
-            throw new \InvalidArgumentException(\sprintf('Unexpected type "%s".', $type));
+        if (!\in_array($type, $validTypes, \true)) {
+            throw new \InvalidArgumentException(\sprintf(
+                'Unexpected type "%s".',
+                $type
+            ));
         }
 
         $this->type = $type;

@@ -13,14 +13,14 @@ namespace Atolye15\Delivery\SystemProperties;
 
 class ContentType extends BaseSystemProperties
 {
-    use Component\EditedTrait;
-    use
-        Component\EnvironmentTrait;
-    use
+    use Component\EditedTrait,
+        Component\EnvironmentTrait,
         Component\SpaceTrait;
 
     /**
      * ContentType constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {

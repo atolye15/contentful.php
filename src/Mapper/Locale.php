@@ -18,7 +18,7 @@ use Atolye15\Delivery\SystemProperties\Locale as SystemProperties;
  * Locale class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\Locale.
+ * of class Atolye15\Delivery\Resource\Locale.
  */
 class Locale extends BaseMapper
 {

@@ -20,11 +20,17 @@ trait SpaceTrait
      */
     protected $space;
 
+    /**
+     * @param array $data
+     */
     protected function initSpace(array $data)
     {
         $this->space = $data['space'];
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeSpace(): array
     {
         return [
@@ -32,6 +38,9 @@ trait SpaceTrait
         ];
     }
 
+    /**
+     * @return Space
+     */
     public function getSpace(): Space
     {
         return $this->space;

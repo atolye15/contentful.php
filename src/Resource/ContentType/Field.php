@@ -83,26 +83,30 @@ class Field implements \JsonSerializable
      *
      * @var bool
      */
-    protected $required = false;
+    protected $required = \false;
 
     /**
      * Describes whether the Field is localized.
      *
      * @var bool
      */
-    protected $localized = false;
+    protected $localized = \false;
 
     /**
      * Describes whether the Field is disabled.
      *
      * @var bool
      */
-    protected $disabled = false;
+    protected $disabled = \false;
 
     /**
      * Regular field construction should happen through the field mapper.
      * This here is a special exception needed for when building fields on type
      * "Unknown", in the edge case of cache being out of sync with the API.
+     *
+     * @param string $id
+     * @param string $name
+     * @param string $type
      */
     public function __construct(string $id, string $name, string $type)
     {
@@ -114,6 +118,8 @@ class Field implements \JsonSerializable
     /**
      * Returns the ID of the field.
      * This is the internal identifier of the content type and is unique in the space.
+     *
+     * @return string
      */
     public function getId(): string
     {
@@ -123,6 +129,8 @@ class Field implements \JsonSerializable
     /**
      * Returns the name of the field.
      * This is a human friendly name shown to the user.
+     *
+     * @return string
      */
     public function getName(): string
     {
@@ -143,6 +151,8 @@ class Field implements \JsonSerializable
      * - Array
      * - Object
      * - Location
+     *
+     * @return string
      */
     public function getType(): string
     {
@@ -165,6 +175,8 @@ class Field implements \JsonSerializable
 
     /**
      * Returns true if this field is required.
+     *
+     * @return bool
      */
     public function isRequired(): bool
     {
@@ -173,6 +185,8 @@ class Field implements \JsonSerializable
 
     /**
      * Returns true if the field contains locale dependent content.
+     *
+     * @return bool
      */
     public function isLocalized(): bool
     {
@@ -183,6 +197,8 @@ class Field implements \JsonSerializable
      * True if the field is disabled.
      *
      * Disabled fields are part of the API responses but not accessible trough the PHP SDK.
+     *
+     * @return bool
      */
     public function isDisabled(): bool
     {
@@ -231,10 +247,10 @@ class Field implements \JsonSerializable
         ];
 
         if ($this->disabled) {
-            $field['disabled'] = true;
+            $field['disabled'] = \true;
         }
 
-        if (null !== $this->linkType) {
+        if (\null !== $this->linkType) {
             $field['linkType'] = $this->linkType;
         }
 

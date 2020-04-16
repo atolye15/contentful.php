@@ -18,7 +18,7 @@ use Atolye15\Delivery\SystemProperties\DeletedAsset as SystemProperties;
  * DeletedAsset class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\DeletedAsset.
+ * of class Atolye15\Delivery\Resource\DeletedAsset.
  */
 class DeletedAsset extends BaseMapper
 {

@@ -37,6 +37,8 @@ class Result
      * Result constructor.
      *
      * @param ResourceInterface[] $items
+     * @param string              $token
+     * @param bool                $done
      */
     public function __construct(array $items, string $token, bool $done)
     {
@@ -57,6 +59,8 @@ class Result
 
     /**
      * Returns the token needed to continue the synchronization.
+     *
+     * @return string
      */
     public function getToken(): string
     {
@@ -65,6 +69,8 @@ class Result
 
     /**
      * Returns true if there are currently no more results in the synchronization.
+     *
+     * @return bool
      */
     public function isDone(): bool
     {

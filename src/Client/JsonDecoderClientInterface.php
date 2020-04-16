@@ -19,6 +19,8 @@ interface JsonDecoderClientInterface extends ScopedClientInterface
     /**
      * Parse a JSON string.
      *
+     * @param string $json
+     *
      * @throws \InvalidArgumentException When attempting to parse JSON belonging to a different space or environment
      *
      * @return ResourceInterface|ResourceArray

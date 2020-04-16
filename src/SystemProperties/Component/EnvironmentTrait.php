@@ -20,11 +20,17 @@ trait EnvironmentTrait
      */
     protected $environment;
 
+    /**
+     * @param array $data
+     */
     protected function initEnvironment(array $data)
     {
         $this->environment = $data['environment'];
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeEnvironment(): array
     {
         return [
@@ -32,6 +38,9 @@ trait EnvironmentTrait
         ];
     }
 
+    /**
+     * @return Environment
+     */
     public function getEnvironment(): Environment
     {
         return $this->environment;

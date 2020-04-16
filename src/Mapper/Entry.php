@@ -24,7 +24,7 @@ use function GuzzleHttp\json_encode as guzzle_json_encode;
  * Entry class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\Entry.
+ * of class Atolye15\Delivery\Resource\Entry.
  */
 class Entry extends BaseMapper
 {
@@ -63,10 +63,17 @@ class Entry extends BaseMapper
         return $entry;
     }
 
+    /**
+     * @param ResourceContentType $contentType
+     * @param array               $fields
+     * @param ResourceClass|null  $previous
+     *
+     * @return array
+     */
     private function buildFields(
         ResourceContentType $contentType,
         array $fields,
-        ResourceClass $previous = null
+        ResourceClass $previous = \null
     ): array {
         if ($previous) {
             $fields = $this->mergePreviousFields($fields, $previous);
@@ -111,6 +118,8 @@ class Entry extends BaseMapper
      *
      * @param array         $fields The field values that have been returned by the API
      * @param ResourceClass $entry  The previous entry object that was already built, if present
+     *
+     * @return array
      */
     private function mergePreviousFields(array $fields, ResourceClass $entry): array
     {
@@ -118,7 +127,7 @@ class Entry extends BaseMapper
         // https://ocramius.github.io/blog/accessing-private-php-class-members-without-reflection/
         $extractor = \Closure::bind(function (ResourceClass $entry) {
             return $entry->fields;
-        }, null, $entry);
+        }, \null, $entry);
         $currentFields = $extractor($entry);
 
         foreach ($fields as $name => $values) {
@@ -137,22 +146,23 @@ class Entry extends BaseMapper
     /**
      * Transforms values from the original JSON representation to an appropriate PHP representation.
      *
+     * @param string      $type
      * @param mixed       $value
      * @param string|null $itemsType The type of the items in the array, if it's an array field
      *
      * @return mixed
      */
-    private function formatValue(string $type, $value, string $itemsType = null)
+    private function formatValue(string $type, $value, string $itemsType = \null)
     {
         // Certain fields are already built as objects (Location, Link, DateTimeImmutable)
         // if the entry has already been built partially.
         // We restore these objects to their JSON implementations to avoid conflicts.
         if (\is_object($value) && $value instanceof \JsonSerializable) {
-            $value = guzzle_json_decode(guzzle_json_encode($value), true);
+            $value = guzzle_json_decode(guzzle_json_encode($value), \true);
         }
 
-        if (null === $value) {
-            return null;
+        if (\null === $value) {
+            return \null;
         }
 
         switch ($type) {

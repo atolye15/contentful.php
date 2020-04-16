@@ -46,6 +46,10 @@ class Standard extends BaseResourcePool
 
     /**
      * Simple constructor.
+     *
+     * @param string $api
+     * @param string $spaceId
+     * @param string $environmentId
      */
     public function __construct(string $api, string $spaceId, string $environmentId, string $cacheKeyPrefix)
     {
@@ -57,13 +61,19 @@ class Standard extends BaseResourcePool
 
     /**
      * Determines whether the given resource type must be actually stored.
+     *
+     * @param string $type
+     *
+     * @return bool
      */
     protected function savesResource(string $type): bool
     {
-        return \in_array($type, ['ContentType', 'Environment', 'Space'], true);
+        return \in_array($type, ['ContentType', 'Environment', 'Space'], \true);
     }
 
     /**
+     * @param ResourceInterface $resource
+     *
      * @return string|null
      */
     protected function getResourceLocale(ResourceInterface $resource)
@@ -72,11 +82,14 @@ class Standard extends BaseResourcePool
 
         return $sys instanceof LocalizedResourceSystemProperties
             ? $sys->getLocale()
-            : null;
+            : \null;
     }
 
     /**
      * Skeleton method which a can be overridden.
+     *
+     * @param string $key
+     * @param string $type
      */
     protected function warmUp(string $key, string $type)
     {
@@ -88,7 +101,7 @@ class Standard extends BaseResourcePool
     public function has(string $type, string $id, array $options = []): bool
     {
         if (!$this->savesResource($type)) {
-            return false;
+            return \false;
         }
 
         $key = $this->generateKey($type, $id, $options);
@@ -103,7 +116,7 @@ class Standard extends BaseResourcePool
     public function save(ResourceInterface $resource): bool
     {
         if (!$this->savesResource($resource->getType())) {
-            return false;
+            return \false;
         }
 
         $key = $this->generateKey(
@@ -123,12 +136,17 @@ class Standard extends BaseResourcePool
      */
     public function get(string $type, string $id, array $options = []): ResourceInterface
     {
-        $locale = $options['locale'] ?? null;
+        $locale = $options['locale'] ?? \null;
         $key = $this->generateKey($type, $id, $options);
         $this->warmUp($key, $type);
 
         if (!$this->savesResource($type) || !isset($this->resources[$key])) {
-            throw new \OutOfBoundsException(\sprintf('Resource pool could not find a resource with type "%s", ID "%s"%s.', $type, $id, $locale ? ', and locale "'.$locale.'"' : ''));
+            throw new \OutOfBoundsException(\sprintf(
+                'Resource pool could not find a resource with type "%s", ID "%s"%s.',
+                $type,
+                $id,
+                $locale ? ', and locale "'.$locale.'"' : ''
+            ));
         }
 
         return $this->resources[$key];
