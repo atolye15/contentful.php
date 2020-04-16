@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\ResourcePool;
 
-use Atolye15\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\ResourceInterface;
 use Atolye15\Delivery\Client\JsonDecoderClientInterface;
 use function GuzzleHttp\json_encode as guzzle_json_encode;
 use Psr\Cache\CacheItemPoolInterface;

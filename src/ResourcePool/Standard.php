@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\ResourcePool;
 
-use Atolye15\Core\Resource\BaseResourcePool;
-use Atolye15\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\BaseResourcePool;
+use Contentful\Core\Resource\ResourceInterface;
 use Atolye15\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
 
 /**
@@ -52,7 +52,7 @@ class Standard extends BaseResourcePool
         $this->api = $api;
         $this->spaceId = $spaceId;
         $this->environmentId = $environmentId;
-        $this->cacheKeyPrefix = $cacheKeyPrefix ?? '';
+        $this->cacheKeyPrefix = $cacheKeyPrefix;
     }
 
     /**
@@ -146,7 +146,7 @@ class Standard extends BaseResourcePool
 
         return 'contentful.'
             .$this->cacheKeyPrefix
-            .'.'
+            .$this->cacheKeyPrefix !== '' ? '.' : ''
             .$this->api
             .'.'
             .$this->spaceId

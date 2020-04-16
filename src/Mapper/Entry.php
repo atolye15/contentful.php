@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Mapper;
 
-use Atolye15\Core\Api\DateTimeImmutable;
-use Atolye15\Core\Api\Link;
-use Atolye15\Core\Api\Location;
+use Contentful\Core\Api\DateTimeImmutable;
+use Contentful\Core\Api\Link;
+use Contentful\Core\Api\Location;
 use Atolye15\Delivery\Resource\ContentType as ResourceContentType;
 use Atolye15\Delivery\Resource\Entry as ResourceClass;
 use Atolye15\Delivery\SystemProperties\Entry as SystemProperties;
@@ -66,7 +66,7 @@ class Entry extends BaseMapper
     private function buildFields(
         ResourceContentType $contentType,
         array $fields,
-        $previous = null
+        ResourceClass $previous = null
     ): array {
         if ($previous) {
             $fields = $this->mergePreviousFields($fields, $previous);

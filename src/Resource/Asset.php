@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Resource;
 
-use Atolye15\Core\File\FileInterface;
-use Atolye15\Core\Resource\AssetInterface;
+use Contentful\Core\File\FileInterface;
+use Contentful\Core\Resource\AssetInterface;
 use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
 
 class Asset extends LocalizedResource implements AssetInterface

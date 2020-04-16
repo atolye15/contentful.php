@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -44,7 +44,5 @@ class WarmUpCacheCommand extends BaseCacheCommand
             $this->client->getEnvironmentId(),
             $this->client->getApi()
         ));
-
-        return 0;
     }
 }

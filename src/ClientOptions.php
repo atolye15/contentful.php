@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Atolye15\Delivery;
 
 use Cache\Adapter\Void\VoidCachePool;
-use Atolye15\Core\Log\NullLogger;
+use Contentful\Core\Log\NullLogger;
 use GuzzleHttp\Client as HttpClient;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
@@ -127,23 +127,16 @@ class ClientOptions
         return $this->host;
     }
 
-    /**
-     * @param CacheItemPoolInterface $cacheItemPool
-     * @param bool                   $autoWarmup
-     * @param bool                   $cacheContent
-     *
-     * @return self
-     */
     public function withCache(
         CacheItemPoolInterface $cacheItemPool,
         bool $autoWarmup = false,
         bool $cacheContent = false,
-        string $prefix = ''
+        string $cacheKeyPrefix = ''
     ): self {
         $this->cacheItemPool = $cacheItemPool;
         $this->cacheAutoWarmup = $autoWarmup;
         $this->cacheContent = $cacheContent;
-        $this->cacheKeyPrefix = $prefix;
+        $this->cacheKeyPrefix = $cacheKeyPrefix;
 
         return $this;
     }
@@ -191,6 +184,14 @@ class ClientOptions
     }
 
     /**
+     * @return string
+     */
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
+    }
+
+    /**
      * Configures the client to use the default resource pool implementation,
      * which may use more memory in extreme scenarios (tens of thousands of resources).
      *
@@ -221,10 +222,5 @@ class ClientOptions
     public function usesLowMemoryResourcePool(): bool
     {
         return $this->usesLowMemoryResourcePool;
-    }
-
-    public function getCacheKeyPrefix(): string
-    {
-        return $this->cacheKeyPrefix;
     }
 }

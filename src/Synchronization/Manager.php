@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Synchronization;
 
-use Atolye15\Core\Resource\ResourceInterface;
-use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
+use Contentful\Core\Resource\ResourceInterface;
+use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
 use Atolye15\Delivery\Client\SynchronizationClientInterface;
 
 /**
@@ -137,11 +137,7 @@ class Manager
         $url = $data['nextSyncUrl'] ?? $data['nextPageUrl'];
 
         $queryValues = [];
-        $parsedUrl = \parse_url($url, \PHP_URL_QUERY);
-        if (null === $parsedUrl) {
-            $parsedUrl = '';
-        }
-        \parse_str($parsedUrl, $queryValues);
+        \parse_str(\parse_url($url, \PHP_URL_QUERY), $queryValues);
 
         return $queryValues['sync_token'];
     }

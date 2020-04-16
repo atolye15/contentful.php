@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Resource;
 
-use Atolye15\Core\Resource\ContentTypeInterface;
+use Contentful\Core\Resource\ContentTypeInterface;
 use Atolye15\Delivery\Resource\ContentType\Field;
 use Atolye15\Delivery\SystemProperties\ContentType as SystemProperties;
 

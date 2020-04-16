@@ -13,11 +13,31 @@
 
 # contentful.php — Contentful PHP Delivery SDK
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Maintained-green.svg" alt="This repository is actively maintained" />
+  &nbsp;
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT License" />
+  </a>
+</p>
 
-[![Packagist](https://img.shields.io/packagist/v/contentful/contentful.svg?style=for-the-badge)](https://packagist.org/packages/contentful/contentful)
-[![PHP version](https://img.shields.io/packagist/php-v/contentful/contentful.svg?style=for-the-badge)](https://packagist.org/packages/contentful/contentful)
-[![Packagist](https://img.shields.io/github/license/contentful/contentful.php.svg?style=for-the-badge)](https://packagist.org/packages/contentful/contentful)
-[![CircleCI](https://circleci.com/gh/contentful/contentful.php.svg?style=shield)](https://circleci.com/gh/contentful/contentful.php)
+<p align="center">
+  <a href="https://packagist.org/packages/contentful/contentful">
+    <img src="https://img.shields.io/packagist/v/contentful/contentful.svg" alt="Packagist" />
+  </a>
+  &nbsp;
+  <a href="https://packagist.org/packages/contentful/contentful">
+    <img src="https://img.shields.io/packagist/php-v/contentful/contentful.svg" alt="PHP version" />
+  </a>
+  &nbsp;
+  <a href="https://travis-ci.org/contentful/contentful.php">
+    <img src="https://img.shields.io/travis/contentful/contentful.php.svg" alt="Travis" />
+  </a>
+  &nbsp;
+  <a href="https://codecov.io/gh/contentful/contentful.php">
+    <img src="https://img.shields.io/codecov/c/github/contentful/contentful.php.svg" alt="Codecov" />
+  </a>
+</p>
 
 
 > PHP SDK for the Contentful [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) and [Content Preview API](https://www.contentful.com/developers/docs/references/content-preview-api/). It helps you to easily access your Content stored in Contentful with your PHP applications.
@@ -61,7 +81,7 @@
 
 ## Getting started
 
-In order to get started with the Contentful PHP SDK you'll need not only to install it, but also to get credentials which will allow you to have access to your content in Contentful. This package requires PHP 7.2 or higher.
+In order to get started with the Contentful PHP SDK you'll need not only to install it, but also to get credentials which will allow you to have access to your content in Contentful. This package requires PHP 7.0 or higher.
 
 ### Installation
 

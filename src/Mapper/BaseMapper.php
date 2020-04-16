@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,11 +11,11 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Mapper;
 
-use Atolye15\Core\Resource\ResourceInterface;
-use Atolye15\Core\Resource\SystemPropertiesInterface;
-use Atolye15\Core\ResourceBuilder\MapperInterface;
-use Atolye15\Core\ResourceBuilder\ObjectHydrator;
-use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
+use Contentful\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\SystemPropertiesInterface;
+use Contentful\Core\ResourceBuilder\MapperInterface;
+use Contentful\Core\ResourceBuilder\ObjectHydrator;
+use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
 use Atolye15\Delivery\Client\ClientInterface;
 use Contentful\RichText\ParserInterface;
 

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\ResourcePool;
 
-use Atolye15\Core\Resource\ResourcePoolInterface;
+use Contentful\Core\Resource\ResourcePoolInterface;
 use Atolye15\Delivery\Client\JsonDecoderClientInterface;
 use Atolye15\Delivery\ClientOptions;
 
@@ -27,7 +27,7 @@ class Factory
     public static function create(JsonDecoderClientInterface $client, ClientOptions $options): ResourcePoolInterface
     {
         if ($options->usesLowMemoryResourcePool()) {
-            return new Standard($client->getApi(), $client->getSpaceId(), $client->getEnvironmentId(), $client->getCacheItemPool());
+            return new Standard($client->getApi(), $client->getSpaceId(), $client->getEnvironmentId());
         }
 
         return new Extended(

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,14 +11,14 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery;
 
-use Atolye15\Core\Api\BaseClient;
-use Atolye15\Core\Api\Exception;
-use Atolye15\Core\Api\Link;
-use Atolye15\Core\Api\LinkResolverInterface;
-use Atolye15\Core\Resource\ResourceArray;
-use Atolye15\Core\Resource\ResourceInterface;
-use Atolye15\Core\Resource\ResourcePoolInterface;
-use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
+use Contentful\Core\Api\BaseClient;
+use Contentful\Core\Api\Exception;
+use Contentful\Core\Api\Link;
+use Contentful\Core\Api\LinkResolverInterface;
+use Contentful\Core\Resource\ResourceArray;
+use Contentful\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\ResourcePoolInterface;
+use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
 use Atolye15\Delivery\Client\ClientInterface;
 use Atolye15\Delivery\Client\JsonDecoderClientInterface;
 use Atolye15\Delivery\Client\SynchronizationClientInterface;
@@ -104,6 +104,11 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     private $environmentId;
 
     /**
+     * @var string
+     */
+    private $cacheKeyPrefix;
+
+    /**
      * @var ScopedJsonDecoder
      */
     private $scopedJsonDecoder;
@@ -135,13 +140,13 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
         $this->environmentId = $environmentId;
 
         $options = $options ?? new ClientOptions();
+        $this->cacheKeyPrefix = $options->getCacheKeyPrefix();
 
         // This works best as a negation:
         // We consider all as Delivery API except for those
         // explicitly set to Preview.
         $this->isDeliveryApi = self::URI_PREVIEW !== $options->getHost();
         $this->defaultLocale = $options->getDefaultLocale();
-        $this->cacheKeyPrefix = $options->getCacheKeyPrefix();
 
         $this->resourcePool = Factory::create($this, $options);
         $this->scopedJsonDecoder = new ScopedJsonDecoder($this->spaceId, $this->environmentId);
@@ -165,14 +170,17 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
         return $this->spaceId;
     }
 
-    public function getEnvironmentId(): string
-    {
-        return $this->environmentId;
-    }
-
+    /**
+     * @return string
+     */
     public function getCacheKeyPrefix(): string
     {
         return $this->cacheKeyPrefix;
+    }
+
+    public function getEnvironmentId(): string
+    {
+        return $this->environmentId;
     }
 
     public function getResourceBuilder(): ResourceBuilderInterface
@@ -342,22 +350,20 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
         $locale = $locale ?: $this->defaultLocale;
 
         if ($this->currentDepth > self::MAX_DEPTH) {
+            $this->currentDepth = 1;
+
             /** @var Entry $entry */
             $entry = $this->resourcePool->get('Entry', $entryId, ['locale' => $locale]);
         } else {
             ++$this->currentDepth;
-            try {
-                /** @var Entry $entry */
-                $entry = $this->requestWithCache(
-                    '/spaces/'.$this->spaceId.'/environments/'.$this->environmentId.'/entries/'.$entryId,
-                    ['locale' => $locale],
-                    'Entry',
-                    $entryId,
-                    $this->getLocaleForCacheKey($locale)
-                );
-            } finally {
-                --$this->currentDepth;
-            }
+            /** @var Entry $entry */
+            $entry = $this->requestWithCache(
+                '/spaces/'.$this->spaceId.'/environments/'.$this->environmentId.'/entries/'.$entryId,
+                ['locale' => $locale],
+                'Entry',
+                $entryId,
+                $this->getLocaleForCacheKey($locale)
+            );
         }
 
         return $entry;

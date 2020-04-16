@@ -19,5 +19,5 @@ foreach ($paths as $path) {
     }
 }
 
-$application = new Atolye15\Delivery\Console\Application();
+$application = new Contentful\Delivery\Console\Application();
 $application->run();

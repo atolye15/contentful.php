@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery;
 
-use Atolye15\Core\Api\Link;
-use Atolye15\Core\Api\LinkResolverInterface;
-use Atolye15\Core\Resource\ResourceInterface;
-use Atolye15\Core\Resource\ResourcePoolInterface;
+use Contentful\Core\Api\Link;
+use Contentful\Core\Api\LinkResolverInterface;
+use Contentful\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\ResourcePoolInterface;
 use Atolye15\Delivery\Client\ClientInterface;
 
 class LinkResolver implements LinkResolverInterface

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -29,7 +29,7 @@ interface ScopedClientInterface
     public function getEnvironmentId(): string;
 
     /**
-     * @return string
+     * Returns the user defined cache key prefix.
      */
     public function getCacheKeyPrefix(): string;
 }

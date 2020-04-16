@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Mapper;
 
-use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
+use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
 use Atolye15\Delivery\Client\ClientInterface;
 use Atolye15\Delivery\Resource\ContentType as ContentTypeClass;
 use Atolye15\Delivery\Resource\DeletedEntry as ResourceClass;

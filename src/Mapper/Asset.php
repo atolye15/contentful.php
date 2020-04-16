@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,12 +11,12 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Mapper;
 
-use Atolye15\Core\Api\Link;
-use Atolye15\Core\File\File;
-use Atolye15\Core\File\FileInterface;
-use Atolye15\Core\File\ImageFile;
-use Atolye15\Core\File\LocalUploadFile;
-use Atolye15\Core\File\RemoteUploadFile;
+use Contentful\Core\Api\Link;
+use Contentful\Core\File\File;
+use Contentful\Core\File\FileInterface;
+use Contentful\Core\File\ImageFile;
+use Contentful\Core\File\LocalUploadFile;
+use Contentful\Core\File\RemoteUploadFile;
 use Atolye15\Delivery\Resource\Asset as ResourceClass;
 use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
 

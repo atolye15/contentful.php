@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery;
 
-use Atolye15\Core\Api\BaseQuery;
+use Contentful\Core\Api\BaseQuery;
 
 /**
  * A Query is used to filter and order collections when making API requests.
