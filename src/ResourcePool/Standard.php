@@ -40,17 +40,23 @@ class Standard extends BaseResourcePool
     protected $environmentId;
 
     /**
+     * @var string
+     */
+    protected $cacheKeyPrefix;
+
+    /**
      * Simple constructor.
      *
      * @param string $api
      * @param string $spaceId
      * @param string $environmentId
      */
-    public function __construct(string $api, string $spaceId, string $environmentId)
+    public function __construct(string $api, string $spaceId, string $environmentId, string $cacheKeyPrefix)
     {
         $this->api = $api;
         $this->spaceId = $spaceId;
         $this->environmentId = $environmentId;
+        $this->cacheKeyPrefix = $cacheKeyPrefix;
     }
 
     /**
@@ -157,6 +163,8 @@ class Standard extends BaseResourcePool
         ]);
 
         return 'contentful.'
+            .$this->cacheKeyPrefix
+            .$this->cacheKeyPrefix !== '' ? '.' : ''
             .$this->api
             .'.'
             .$this->spaceId

@@ -72,7 +72,8 @@ class Extended extends Standard
         parent::__construct(
             $client->getApi(),
             $client->getSpaceId(),
-            $client->getEnvironmentId()
+            $client->getEnvironmentId(),
+            $client->getCacheKeyPrefix()
         );
         $this->client = $client;
         $this->cacheItemPool = $cacheItemPool;

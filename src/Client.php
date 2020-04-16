@@ -112,6 +112,11 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     private $richTextParser;
 
     /**
+     * @var string
+     */
+    private $cacheKeyPrefix;
+
+    /**
      * Client constructor.
      *
      * @param string             $token         Delivery API Access Token for the space used with this Client
@@ -129,6 +134,7 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
         $this->environmentId = $environmentId;
 
         $options = $options ?? new ClientOptions();
+        $this->cacheKeyPrefix = $options->getCacheKeyPrefix();
 
         // This works best as a negation:
         // We consider all as Delivery API except for those
@@ -159,6 +165,14 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     public function getSpaceId(): string
     {
         return $this->spaceId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
     }
 
     /**

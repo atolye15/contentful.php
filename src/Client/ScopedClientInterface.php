@@ -33,4 +33,9 @@ interface ScopedClientInterface
      * @return string
      */
     public function getEnvironmentId(): string;
+
+    /**
+     * Returns the cache prefix key user defined.
+     */
+    public function getCacheKeyPrefix(): string;
 }

@@ -60,6 +60,11 @@ class ClientOptions
     private $usesLowMemoryResourcePool = \false;
 
     /**
+     * @var string
+     */
+    private $cacheKeyPrefix;
+
+    /**
      * ClientOptions constructor.
      */
     public function __construct()
@@ -151,11 +156,13 @@ class ClientOptions
     public function withCache(
         CacheItemPoolInterface $cacheItemPool,
         bool $autoWarmup = \false,
-        bool $cacheContent = \false
+        bool $cacheContent = \false,
+        string $cacheKeyPrefix = ''
     ): self {
         $this->cacheItemPool = $cacheItemPool;
         $this->cacheAutoWarmup = $autoWarmup;
         $this->cacheContent = $cacheContent;
+        $this->cacheKeyPrefix = $cacheKeyPrefix;
 
         return $this;
     }
@@ -224,6 +231,14 @@ class ClientOptions
     public function getHttpClient(): HttpClient
     {
         return $this->httpClient;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
     }
 
     /**
