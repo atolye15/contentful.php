@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -13,14 +13,14 @@ namespace Atolye15\Delivery\SystemProperties;
 
 class ContentType extends BaseSystemProperties
 {
-    use Component\EditedTrait;
-    use
-        Component\EnvironmentTrait;
-    use
+    use Component\EditedTrait,
+        Component\EnvironmentTrait,
         Component\SpaceTrait;
 
     /**
      * ContentType constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {

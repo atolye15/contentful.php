@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\SystemProperties\Component;
 
-use Atolye15\Core\Api\DateTimeImmutable;
+use Contentful\Core\Api\DateTimeImmutable;
 
 trait EditedTrait
 {
@@ -27,6 +27,9 @@ trait EditedTrait
      */
     protected $updatedAt;
 
+    /**
+     * @param array $data
+     */
     protected function initEdited(array $data)
     {
         $this->initRevision($data);
@@ -34,6 +37,9 @@ trait EditedTrait
         $this->updatedAt = new DateTimeImmutable($data['updatedAt']);
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeEdited(): array
     {
         return \array_merge($this->jsonSerializeRevision(), [
@@ -42,11 +48,17 @@ trait EditedTrait
         ]);
     }
 
+    /**
+     * @return DateTimeImmutable
+     */
     public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }
 
+    /**
+     * @return DateTimeImmutable
+     */
     public function getUpdatedAt(): DateTimeImmutable
     {
         return $this->updatedAt;

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -15,21 +15,22 @@ interface ScopedClientInterface
 {
     /**
      * Returns a string representation of the API currently in use.
+     *
+     * @return string
      */
     public function getApi(): string;
 
     /**
      * Returns the ID of the space currently in use.
+     *
+     * @return string
      */
     public function getSpaceId(): string;
 
     /**
      * Returns the ID of the environment currently in use.
-     */
-    public function getEnvironmentId(): string;
-
-    /**
+     *
      * @return string
      */
-    public function getCacheKeyPrefix(): string;
+    public function getEnvironmentId(): string;
 }

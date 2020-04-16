@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Synchronization;
 
-use Atolye15\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\ResourceInterface;
 
 /**
  * The Result of synchronization.
@@ -37,6 +37,8 @@ class Result
      * Result constructor.
      *
      * @param ResourceInterface[] $items
+     * @param string              $token
+     * @param bool                $done
      */
     public function __construct(array $items, string $token, bool $done)
     {
@@ -57,6 +59,8 @@ class Result
 
     /**
      * Returns the token needed to continue the synchronization.
+     *
+     * @return string
      */
     public function getToken(): string
     {
@@ -65,6 +69,8 @@ class Result
 
     /**
      * Returns true if there are currently no more results in the synchronization.
+     *
+     * @return bool
      */
     public function isDone(): bool
     {

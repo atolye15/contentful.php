@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Console;
 
-use Atolye15\Core\Resource\ResourcePoolInterface;
+use Contentful\Core\Resource\ResourcePoolInterface;
 use Atolye15\Delivery\Cache\CacheItemPoolFactoryInterface;
 use Atolye15\Delivery\Client;
 use Atolye15\Delivery\Client\ClientInterface;
@@ -38,6 +38,9 @@ abstract class BaseCacheCommand extends Command
      */
     protected $cacheItemPool;
 
+    /**
+     * @return string
+     */
     abstract protected function getCommandName(): string;
 
     /**
@@ -61,6 +64,9 @@ abstract class BaseCacheCommand extends Command
         ;
     }
 
+    /**
+     * @param InputInterface $input
+     */
     protected function initClient(InputInterface $input)
     {
         /** @var string $accessToken */
@@ -81,12 +87,21 @@ abstract class BaseCacheCommand extends Command
         $this->cacheItemPool = $this->getCacheItemPool($input, $client);
     }
 
+    /**
+     * @param InputInterface  $input
+     * @param ClientInterface $client
+     *
+     * @return CacheItemPoolInterface
+     */
     private function getCacheItemPool(InputInterface $input, ClientInterface $client): CacheItemPoolInterface
     {
         $factoryClass = $input->getOption('factory-class');
         $cacheItemPoolFactory = new $factoryClass();
         if (!$cacheItemPoolFactory instanceof CacheItemPoolFactoryInterface) {
-            throw new \InvalidArgumentException(\sprintf('Cache item pool factory must implement "%s".', CacheItemPoolFactoryInterface::class));
+            throw new \InvalidArgumentException(\sprintf(
+                'Cache item pool factory must implement "%s".',
+                CacheItemPoolFactoryInterface::class
+            ));
         }
 
         return $cacheItemPoolFactory->getCacheItemPool(

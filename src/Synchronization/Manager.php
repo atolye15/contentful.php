@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Synchronization;
 
-use Atolye15\Core\Resource\ResourceInterface;
-use Atolye15\Core\ResourceBuilder\ResourceBuilderInterface;
+use Contentful\Core\Resource\ResourceInterface;
+use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
 use Atolye15\Delivery\Client\SynchronizationClientInterface;
 
 /**
@@ -45,6 +45,10 @@ class Manager
      * Do not instantiate this class yourself,
      * use SynchronizationClientInterface::getSynchronizationManager() instead.
      *
+     * @param SynchronizationClientInterface $client
+     * @param ResourceBuilderInterface       $builder
+     * @param bool                           $isDeliveryApi
+     *
      * @see Client::getSynchronizationManager()
      */
     public function __construct(
@@ -58,9 +62,12 @@ class Manager
     }
 
     /**
+     * @param string|null $token
+     * @param Query|null  $query
+     *
      * @return \Generator An instance of Result wrapped in a Generator object
      */
-    public function sync(string $token = null, Query $query = null): \Generator
+    public function sync(string $token = \null, Query $query = \null): \Generator
     {
         do {
             $result = $token ? $this->continueSync($token) : $this->startSync($query);
@@ -79,11 +86,13 @@ class Manager
      *
      * A Query object can be used to return only a subset of the space.
      *
+     * @param Query|null $query
+     *
      * @return Result
      */
-    public function startSync(Query $query = null)
+    public function startSync(Query $query = \null)
     {
-        $query = null !== $query ? $query : new Query();
+        $query = \null !== $query ? $query : new Query();
         $response = $this->client->syncRequest($query->getQueryData());
 
         return $this->buildResult($response);
@@ -96,6 +105,8 @@ class Manager
      * @param string|Result $token
      *
      * @throws \RuntimeException if this method is used for a subsequent sync when used with the Preview API
+     *
+     * @return Result
      */
     public function continueSync($token): Result
     {
@@ -114,6 +125,10 @@ class Manager
 
     /**
      * Build a Result from the API response.
+     *
+     * @param array $data
+     *
+     * @return Result
      */
     private function buildResult(array $data): Result
     {
@@ -131,17 +146,15 @@ class Manager
      * Parses the sync_token out of an URL supplied by the API.
      *
      * @param array $data The API response
+     *
+     * @return string
      */
     private function getTokenFromResponse(array $data): string
     {
         $url = $data['nextSyncUrl'] ?? $data['nextPageUrl'];
 
         $queryValues = [];
-        $parsedUrl = \parse_url($url, \PHP_URL_QUERY);
-        if (null === $parsedUrl) {
-            $parsedUrl = '';
-        }
-        \parse_str($parsedUrl, $queryValues);
+        \parse_str(\parse_url($url, \PHP_URL_QUERY), $queryValues);
 
         return $queryValues['sync_token'];
     }

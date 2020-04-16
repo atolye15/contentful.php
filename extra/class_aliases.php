@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -60,5 +60,5 @@ $classes = [
 ];
 
 foreach ($classes as $previous => $new) {
-    \class_alias($new, $previous, true);
+    \class_alias($new, $previous, \true);
 }

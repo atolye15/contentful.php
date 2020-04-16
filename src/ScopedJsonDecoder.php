@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -27,6 +27,9 @@ class ScopedJsonDecoder
 
     /**
      * ScopedJsonDecoder constructor.
+     *
+     * @param string $spaceId
+     * @param string $environmentId
      */
     public function __construct(string $spaceId, string $environmentId)
     {
@@ -34,15 +37,26 @@ class ScopedJsonDecoder
         $this->environmentId = $environmentId;
     }
 
+    /**
+     * @param string $json
+     *
+     * @return array
+     */
     public function decode(string $json): array
     {
-        $data = guzzle_json_decode($json, true);
+        $data = guzzle_json_decode($json, \true);
 
         $spaceId = $this->extractSpaceId($data);
         $environmentId = $this->extractEnvironmentId($data);
 
         if ($spaceId !== $this->spaceId || $environmentId !== $this->environmentId) {
-            throw new \InvalidArgumentException(\sprintf('Trying to parse and build a JSON structure with a client configured for handling space "%s" and environment "%s", but space "%s" and environment "%s" were detected.', $this->spaceId, $this->environmentId, $spaceId, $environmentId));
+            throw new \InvalidArgumentException(\sprintf(
+                'Trying to parse and build a JSON structure with a client configured for handling space "%s" and environment "%s", but space "%s" and environment "%s" were detected.',
+                $this->spaceId,
+                $this->environmentId,
+                $spaceId,
+                $environmentId
+            ));
         }
 
         return $data;
@@ -50,6 +64,10 @@ class ScopedJsonDecoder
 
     /**
      * Checks a data structure and extracts the space ID, if present.
+     *
+     * @param array $data
+     *
+     * @return string
      */
     private function extractSpaceId(array $data): string
     {
@@ -83,6 +101,10 @@ class ScopedJsonDecoder
 
     /**
      * Checks a data structure and extracts the environment ID, if present.
+     *
+     * @param array $data
+     *
+     * @return string
      */
     public function extractEnvironmentId(array $data): string
     {

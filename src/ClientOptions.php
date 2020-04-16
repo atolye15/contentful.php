@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace Atolye15\Delivery;
 
 use Cache\Adapter\Void\VoidCachePool;
-use Atolye15\Core\Log\NullLogger;
+use Contentful\Core\Log\NullLogger;
 use GuzzleHttp\Client as HttpClient;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
@@ -32,12 +32,12 @@ class ClientOptions
     /**
      * @var bool
      */
-    private $cacheAutoWarmup = false;
+    private $cacheAutoWarmup = \false;
 
     /**
      * @var bool
      */
-    private $cacheContent = false;
+    private $cacheContent = \false;
 
     /**
      * @var LoggerInterface
@@ -55,16 +55,6 @@ class ClientOptions
     private $httpClient;
 
     /**
-     * @var bool
-     */
-    private $usesLowMemoryResourcePool = false;
-
-    /**
-     * @var string
-     */
-    private $cacheKeyPrefix;
-
-    /**
      * ClientOptions constructor.
      */
     public function __construct()
@@ -74,12 +64,17 @@ class ClientOptions
         $this->httpClient = new HttpClient();
     }
 
+    /**
+     * @return self
+     */
     public static function create(): self
     {
         return new self();
     }
 
     /**
+     * @param string $locale
+     *
      * @return self
      */
     public function withDefaultLocale(string $locale)
@@ -97,6 +92,9 @@ class ClientOptions
         return $this->defaultLocale;
     }
 
+    /**
+     * @return self
+     */
     public function usingDeliveryApi(): self
     {
         $this->host = Client::URI_DELIVERY;
@@ -104,6 +102,9 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return self
+     */
     public function usingPreviewApi(): self
     {
         $this->host = Client::URI_PREVIEW;
@@ -111,6 +112,11 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @param string $host
+     *
+     * @return self
+     */
     public function withHost(string $host): self
     {
         if ('/' === \mb_substr($host, -1)) {
@@ -122,6 +128,9 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getHost(): string
     {
         return $this->host;
@@ -136,28 +145,35 @@ class ClientOptions
      */
     public function withCache(
         CacheItemPoolInterface $cacheItemPool,
-        bool $autoWarmup = false,
-        bool $cacheContent = false,
-        string $prefix = ''
+        bool $autoWarmup = \false,
+        bool $cacheContent = \false
     ): self {
         $this->cacheItemPool = $cacheItemPool;
         $this->cacheAutoWarmup = $autoWarmup;
         $this->cacheContent = $cacheContent;
-        $this->cacheKeyPrefix = $prefix;
 
         return $this;
     }
 
+    /**
+     * @return CacheItemPoolInterface
+     */
     public function getCacheItemPool(): CacheItemPoolInterface
     {
         return $this->cacheItemPool;
     }
 
+    /**
+     * @return bool
+     */
     public function hasCacheAutoWarmup(): bool
     {
         return $this->cacheAutoWarmup;
     }
 
+    /**
+     * @return bool
+     */
     public function hasCacheContent(): bool
     {
         return $this->cacheContent;
@@ -165,6 +181,10 @@ class ClientOptions
 
     /**
      * Configure the Client to use any PSR-3 compatible logger.
+     *
+     * @param LoggerInterface $logger
+     *
+     * @return self
      */
     public function withLogger(LoggerInterface $logger): self
     {
@@ -173,11 +193,19 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return LoggerInterface
+     */
     public function getLogger(): LoggerInterface
     {
         return $this->logger;
     }
 
+    /**
+     * @param HttpClient $client
+     *
+     * @return self
+     */
     public function withHttpClient(HttpClient $client): self
     {
         $this->httpClient = $client;
@@ -185,46 +213,11 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return HttpClient
+     */
     public function getHttpClient(): HttpClient
     {
         return $this->httpClient;
-    }
-
-    /**
-     * Configures the client to use the default resource pool implementation,
-     * which may use more memory in extreme scenarios (tens of thousands of resources).
-     *
-     * @return ClientOptions
-     */
-    public function withNormalResourcePool(): self
-    {
-        $this->usesLowMemoryResourcePool = false;
-
-        return $this;
-    }
-
-    /**
-     * Configures the client to use a resource pool which will not cache entries and assets,
-     * which is useful when handling tens of thousand of resources,
-     * but it may cause extra API calls in normal scenarios.
-     * Use this option only if the default resource pool is causing you memory errors.
-     *
-     * @return ClientOptions
-     */
-    public function withLowMemoryResourcePool(): self
-    {
-        $this->usesLowMemoryResourcePool = true;
-
-        return $this;
-    }
-
-    public function usesLowMemoryResourcePool(): bool
-    {
-        return $this->usesLowMemoryResourcePool;
-    }
-
-    public function getCacheKeyPrefix(): string
-    {
-        return $this->cacheKeyPrefix;
     }
 }

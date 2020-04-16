@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Cache;
 
-use Atolye15\Core\Resource\ResourceInterface;
-use Atolye15\Core\Resource\ResourcePoolInterface;
+use Contentful\Core\Resource\ResourceInterface;
+use Contentful\Core\Resource\ResourcePoolInterface;
 use Atolye15\Delivery\Client\ClientInterface;
 use Atolye15\Delivery\Query;
 use Atolye15\Delivery\Resource\Locale;
@@ -37,6 +37,10 @@ abstract class BaseCacheHandler
 
     /**
      * CacheWarmer constructor.
+     *
+     * @param ClientInterface        $client
+     * @param ResourcePoolInterface  $resourcePool
+     * @param CacheItemPoolInterface $cacheItemPool
      */
     public function __construct(
         ClientInterface $client,
@@ -49,9 +53,11 @@ abstract class BaseCacheHandler
     }
 
     /**
+     * @param bool $cacheContent
+     *
      * @return ResourceInterface[]
      */
-    protected function fetchResources(bool $cacheContent = false)
+    protected function fetchResources(bool $cacheContent = \false)
     {
         $resources = [
             $this->client->getSpace(),
@@ -88,6 +94,8 @@ abstract class BaseCacheHandler
     /**
      * @param string   $type    Either 'Entry' or 'Asset'
      * @param string[] $locales
+     *
+     * @return \Generator
      */
     private function fetchCollection(string $type, array $locales): \Generator
     {

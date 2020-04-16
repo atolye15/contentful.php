@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -11,13 +11,13 @@ declare(strict_types=1);
 
 namespace Atolye15\Delivery\Mapper;
 
-use Atolye15\Core\Resource\ResourceArray as ResourceClass;
+use Contentful\Core\Resource\ResourceArray as ResourceClass;
 
 /**
  * ResourceArray class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Core\Resource\ResourceArray.
+ * of class Contentful\ResourceArray.
  */
 class ResourceArray extends BaseMapper
 {

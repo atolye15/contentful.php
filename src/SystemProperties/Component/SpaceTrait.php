@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -20,11 +20,17 @@ trait SpaceTrait
      */
     protected $space;
 
+    /**
+     * @param array $data
+     */
     protected function initSpace(array $data)
     {
         $this->space = $data['space'];
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeSpace(): array
     {
         return [
@@ -32,6 +38,9 @@ trait SpaceTrait
         ];
     }
 
+    /**
+     * @return Space
+     */
     public function getSpace(): Space
     {
         return $this->space;

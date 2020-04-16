@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -18,11 +18,17 @@ trait LocaleTrait
      */
     protected $locale;
 
+    /**
+     * @param array $data
+     */
     protected function initLocale(array $data)
     {
-        $this->locale = $data['locale'] ?? null;
+        $this->locale = $data['locale'] ?? \null;
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeLocale(): array
     {
         return [

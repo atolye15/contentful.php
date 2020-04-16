@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -71,8 +71,8 @@ abstract class LocalizedResource extends BaseResource
 
     /**
      * The locale code for the currently set locale.
-     * It will be either the default locale if the resource was fetched using "locale=*",
-     * or the one that was used in the API request.
+     *
+     * @return string
      */
     public function getLocale(): string
     {
@@ -83,29 +83,44 @@ abstract class LocalizedResource extends BaseResource
      * @param Locale|string|null $input
      *
      * @throws \InvalidArgumentException when $locale is not one of the locales supported by the space
+     *
+     * @return string
      */
-    protected function getLocaleFromInput($input = null): string
+    protected function getLocaleFromInput($input = \null): string
     {
         if ($input instanceof Locale) {
             $input = $input->getCode();
         }
 
-        if (null === $input) {
+        if (\null === $input) {
             return $this->localeCode;
         }
 
         if ($this->sys->getLocale() && $input !== $this->sys->getLocale()) {
-            throw new \InvalidArgumentException(\sprintf('Entry with ID "%s" was built using locale "%s", but now access using locale "%s" is being attempted.', $this->sys->getId(), $this->sys->getLocale(), $input));
+            throw new \InvalidArgumentException(\sprintf(
+                'Entry with ID "%s" was built using locale "%s", but now access using locale "%s" is being attempted.',
+                $this->sys->getId(),
+                $this->sys->getLocale(),
+                $input
+            ));
         }
 
-        if (!\in_array($input, $this->localeCodes, true)) {
-            throw new \InvalidArgumentException(\sprintf('Trying to use invalid locale "%s", available locales are "%s".', $input, \implode(', ', $this->localeCodes)));
+        if (!\in_array($input, $this->localeCodes, \true)) {
+            throw new \InvalidArgumentException(\sprintf(
+                'Trying to use invalid locale "%s", available locales are "%s".',
+                $input,
+                \implode(', ', $this->localeCodes)
+            ));
         }
 
         return $input;
     }
 
     /**
+     * @param array       $valueMap
+     * @param string      $localeCode
+     * @param Environment $environment
+     *
      * @throws \RuntimeException If we detect an endless loop
      *
      * @return string|null the locale code for which a value can be found, or null if the end of the chain was reached
@@ -115,9 +130,9 @@ abstract class LocalizedResource extends BaseResource
         $loopCounter = 0;
         while (!isset($valueMap[$localeCode])) {
             $localeCode = $environment->getLocale($localeCode)->getFallbackCode();
-            if (null === $localeCode) {
+            if (\null === $localeCode) {
                 // We reached the end of the fallback chain and there's no value
-                return null;
+                return \null;
             }
 
             ++$loopCounter;

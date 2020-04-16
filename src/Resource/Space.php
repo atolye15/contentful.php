@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2020 Contentful GmbH
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
@@ -38,6 +38,8 @@ class Space extends BaseResource
 
     /**
      * Returns the name of this space.
+     *
+     * @return string
      */
     public function getName(): string
     {
