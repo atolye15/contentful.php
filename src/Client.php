@@ -104,6 +104,11 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     private $environmentId;
 
     /**
+     * @var string
+     */
+    private $cacheKeyPrefix;
+
+    /**
      * @var ScopedJsonDecoder
      */
     private $scopedJsonDecoder;
@@ -135,6 +140,7 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
         $this->environmentId = $environmentId;
 
         $options = $options ?? new ClientOptions();
+        $this->cacheKeyPrefix = $options->getCacheKeyPrefix();
 
         // This works best as a negation:
         // We consider all as Delivery API except for those
@@ -162,6 +168,14 @@ class Client extends BaseClient implements ClientInterface, SynchronizationClien
     public function getSpaceId(): string
     {
         return $this->spaceId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCacheKeyPrefix(): string
+    {
+        return $this->cacheKeyPrefix;
     }
 
     public function getEnvironmentId(): string
