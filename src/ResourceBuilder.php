@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -60,10 +60,6 @@ class ResourceBuilder extends BaseResourceBuilder
 
     /**
      * ResourceBuilder constructor.
-     *
-     * @param ClientInterface       $client
-     * @param ResourcePoolInterface $resourcePool
-     * @param ParserInterface       $richTextParser
      */
     public function __construct(
         ClientInterface $client,
@@ -102,20 +98,17 @@ class ResourceBuilder extends BaseResourceBuilder
             return 'ResourceArray';
         }
 
-        if (\in_array($data['sys']['type'], self::$availableTypes, \true)) {
+        if (\in_array($data['sys']['type'], self::$availableTypes, true)) {
             return $data['sys']['type'];
         }
 
-        throw new \InvalidArgumentException(\sprintf(
-            'Unexpected system type "%s" while trying to build a resource.',
-            $data['sys']['type']
-        ));
+        throw new \InvalidArgumentException(\sprintf('Unexpected system type "%s" while trying to build a resource.', $data['sys']['type']));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function build(array $data, ResourceInterface $resource = \null)
+    public function build(array $data, ResourceInterface $resource = null)
     {
         $type = $data['sys']['type'];
 
@@ -129,8 +122,8 @@ class ResourceBuilder extends BaseResourceBuilder
         $resourceId = $data['sys']['id'];
 
         // Assets and entries are stored in cache using their locales.
-        $locale = \null;
-        if (\in_array($data['sys']['type'], ['Asset', 'Entry'], \true)) {
+        $locale = null;
+        if (\in_array($data['sys']['type'], ['Asset', 'Entry'], true)) {
             $locale = $data['sys']['locale'] ?? '*';
         }
 
@@ -160,8 +153,6 @@ class ResourceBuilder extends BaseResourceBuilder
      * We extract content types that need to be fetched from a response array.
      * This way we can use a collective query rather than making separate queries
      * for every content type.
-     *
-     * @param array $data
      */
     private function buildContentTypeCollection(array $data)
     {
@@ -173,7 +164,7 @@ class ResourceBuilder extends BaseResourceBuilder
         $ids = \array_map(function (array $item) {
             return 'Entry' === $item['sys']['type']
                 ? $item['sys']['contentType']['sys']['id']
-                : \null;
+                : null;
         }, $items);
 
         $ids = \array_filter(\array_unique($ids), function ($id): bool {
@@ -188,9 +179,6 @@ class ResourceBuilder extends BaseResourceBuilder
         }
     }
 
-    /**
-     * @param array $data
-     */
     private function buildIncludes(array $data)
     {
         $items = \array_merge(

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -31,9 +31,6 @@ class LinkResolver implements LinkResolverInterface
 
     /**
      * LinkResolver constructor.
-     *
-     * @param ClientInterface       $client
-     * @param ResourcePoolInterface $resourcePool
      */
     public function __construct(ClientInterface $client, ResourcePoolInterface $resourcePool)
     {
@@ -46,7 +43,7 @@ class LinkResolver implements LinkResolverInterface
      */
     public function resolveLink(Link $link, array $parameters = []): ResourceInterface
     {
-        $locale = $parameters['locale'] ?? \null;
+        $locale = $parameters['locale'] ?? null;
 
         switch ($link->getLinkType()) {
             case 'Asset':
@@ -60,18 +57,17 @@ class LinkResolver implements LinkResolverInterface
             case 'Space':
                 return $this->client->getSpace();
             default:
-                throw new \InvalidArgumentException(\sprintf(
-                    'Trying to resolve link for unknown type "%s".',
-                    $link->getLinkType()
-                ));
+                throw new \InvalidArgumentException(\sprintf('Trying to resolve link for unknown type "%s".', $link->getLinkType()));
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function resolveLinkCollection(array $links, string $locale = \null): array
+    public function resolveLinkCollection(array $links, array $parameters = []): array
     {
+        $locale = $parameters['locale'] ?? null;
+
         // We load all resources for the given resource types
         $types = \array_unique(\array_map(function (Link $link) {
             return $link->getLinkType();
@@ -97,13 +93,11 @@ class LinkResolver implements LinkResolverInterface
     /**
      * Loads resources for a certain type only.
      *
-     * @param string      $type
-     * @param Link[]      $links
-     * @param string|null $locale
+     * @param Link[] $links
      *
      * @return ResourceInterface[]
      */
-    private function resolveLinksForResourceType(string $type, array $links, string $locale = \null): array
+    private function resolveLinksForResourceType(string $type, array $links, string $locale = null): array
     {
         $resourceIds = \array_map(function (Link $link): string {
             return $link->getId();
@@ -123,13 +117,9 @@ class LinkResolver implements LinkResolverInterface
     /**
      * Loads resources in the current cache pool and fetches the missing ones from the API.
      *
-     * @param array       $resourceIds
-     * @param string      $type
-     * @param string|null $locale
-     *
      * @return ResourceInterface[]
      */
-    private function fetchResourcesForGivenIds(array $resourceIds, string $type, string $locale = \null): array
+    private function fetchResourcesForGivenIds(array $resourceIds, string $type, string $locale = null): array
     {
         $resources = [];
         $resourcePoolOptions = ['locale' => $locale];
@@ -142,7 +132,7 @@ class LinkResolver implements LinkResolverInterface
         }
 
         foreach ($this->createIdChunks($resourceIds) as $chunk) {
-            $resources += $this->fetchCollectionFromApi($chunk, $type, $locale);
+            $resources = \array_merge($resources, $this->fetchCollectionFromApi($chunk, $type, $locale));
         }
 
         return $resources;
@@ -180,13 +170,11 @@ class LinkResolver implements LinkResolverInterface
     /**
      * Actually make the relevant API calls.
      *
-     * @param string[]    $resourceIds
-     * @param string      $type
-     * @param string|null $locale
+     * @param string[] $resourceIds
      *
      * @return ResourceInterface[]
      */
-    private function fetchCollectionFromApi(array $resourceIds, string $type, string $locale = \null): array
+    private function fetchCollectionFromApi(array $resourceIds, string $type, string $locale = null): array
     {
         $query = (new Query())
             ->where('sys.id[in]', $resourceIds)
@@ -208,10 +196,7 @@ class LinkResolver implements LinkResolverInterface
             case 'Space':
                 return [$this->client->getSpace()];
             default:
-                throw new \InvalidArgumentException(\sprintf(
-                    'Trying to resolve link for unknown type "%s".',
-                    $type
-                ));
+                throw new \InvalidArgumentException(\sprintf('Trying to resolve link for unknown type "%s".', $type));
         }
     }
 }

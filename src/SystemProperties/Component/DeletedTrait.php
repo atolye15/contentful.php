@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -20,17 +20,11 @@ trait DeletedTrait
      */
     protected $deletedAt;
 
-    /**
-     * @param array $data
-     */
     protected function initDeletedAt(array $data)
     {
         $this->deletedAt = new DateTimeImmutable($data['deletedAt']);
     }
 
-    /**
-     * @return array
-     */
     protected function jsonSerializeDeletedAt(): array
     {
         return [
@@ -38,9 +32,6 @@ trait DeletedTrait
         ];
     }
 
-    /**
-     * @return DateTimeImmutable
-     */
     public function getDeletedAt(): DateTimeImmutable
     {
         return $this->deletedAt;

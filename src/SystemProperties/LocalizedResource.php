@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -13,15 +13,16 @@ namespace Atolye15\Delivery\SystemProperties;
 
 abstract class LocalizedResource extends BaseSystemProperties
 {
-    use Component\EditedTrait,
-        Component\EnvironmentTrait,
-        Component\LocaleTrait,
+    use Component\EditedTrait;
+    use
+        Component\EnvironmentTrait;
+    use
+        Component\LocaleTrait;
+    use
         Component\SpaceTrait;
 
     /**
      * LocalizedResource constructor.
-     *
-     * @param array $sys
      */
     public function __construct(array $sys)
     {

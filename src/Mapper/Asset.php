@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -42,13 +42,13 @@ class Asset extends BaseMapper
             'sys' => $sys,
             'title' => isset($data['fields']['title'])
                 ? $this->normalizeFieldData($data['fields']['title'], $locale)
-                : \null,
+                : null,
             'description' => isset($data['fields']['description'])
                 ? $this->normalizeFieldData($data['fields']['description'], $locale)
-                : \null,
+                : null,
             'file' => isset($data['fields']['file'])
                 ? \array_map([$this, 'buildFile'], $this->normalizeFieldData($data['fields']['file'], $locale))
-                : \null,
+                : null,
         ]);
 
         $asset->initLocales($asset->getSystemProperties()->getEnvironment()->getLocales());
@@ -58,10 +58,6 @@ class Asset extends BaseMapper
 
     /**
      * Creates a File or a subclass thereof.
-     *
-     * @param array $data
-     *
-     * @return FileInterface
      */
     protected function buildFile(array $data): FileInterface
     {

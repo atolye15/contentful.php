@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -18,17 +18,11 @@ trait RevisionTrait
      */
     protected $revision;
 
-    /**
-     * @param array $data
-     */
     protected function initRevision(array $data)
     {
         $this->revision = $data['revision'] ?? $data['version'] ?? 1;
     }
 
-    /**
-     * @return array
-     */
     protected function jsonSerializeRevision(string $name = 'revision'): array
     {
         return [
@@ -36,9 +30,6 @@ trait RevisionTrait
         ];
     }
 
-    /**
-     * @return int
-     */
     public function getRevision(): int
     {
         return $this->revision;

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -20,8 +20,6 @@ abstract class BaseResource implements ResourceInterface
      * Resources in this SDK should not be built using `$new Class()`.
      * This method is only useful in testing environments, where the resource
      * needs to be subclasses and this method made public.
-     *
-     * @param array $data
      */
     protected function __construct(array $data)
     {

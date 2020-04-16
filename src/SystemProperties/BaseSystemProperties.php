@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -30,8 +30,6 @@ abstract class BaseSystemProperties implements SystemPropertiesInterface
 
     /**
      * SystemProperties constructor.
-     *
-     * @param array $sys
      */
     public function __construct(array $sys)
     {
@@ -39,17 +37,11 @@ abstract class BaseSystemProperties implements SystemPropertiesInterface
         $this->type = $sys['type'];
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;

@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -32,8 +32,6 @@ interface CacheItemPoolFactoryInterface
      *                              it's the result of calling $client->getApi()
      * @param string $spaceId       The ID of the space
      * @param string $environmentId The ID of the environment
-     *
-     * @return CacheItemPoolInterface
      */
     public function getCacheItemPool(string $api, string $spaceId, string $environmentId): CacheItemPoolInterface;
 }

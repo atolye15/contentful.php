@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -20,17 +20,11 @@ trait ContentTypeTrait
      */
     protected $contentType;
 
-    /**
-     * @param array $data
-     */
     protected function initContentType(array $data)
     {
         $this->contentType = $data['contentType'];
     }
 
-    /**
-     * @return array
-     */
     protected function jsonSerializeContentType(): array
     {
         return [
@@ -38,9 +32,6 @@ trait ContentTypeTrait
         ];
     }
 
-    /**
-     * @return ContentType
-     */
     public function getContentType(): ContentType
     {
         return $this->contentType;

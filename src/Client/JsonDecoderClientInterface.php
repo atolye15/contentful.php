@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -18,8 +18,6 @@ interface JsonDecoderClientInterface extends ScopedClientInterface
 {
     /**
      * Parse a JSON string.
-     *
-     * @param string $json
      *
      * @throws \InvalidArgumentException When attempting to parse JSON belonging to a different space or environment
      *

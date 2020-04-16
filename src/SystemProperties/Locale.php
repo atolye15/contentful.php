@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -17,8 +17,6 @@ class Locale extends BaseSystemProperties
 
     /**
      * Locale constructor.
-     *
-     * @param array $sys
      */
     public function __construct(array $sys)
     {

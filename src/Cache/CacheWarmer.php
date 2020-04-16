@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/contentful package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -25,10 +25,8 @@ class CacheWarmer extends BaseCacheHandler
 {
     /**
      * @param bool $cacheContent
-     *
-     * @return bool
      */
-    public function warmUp($cacheContent = \false): bool
+    public function warmUp($cacheContent = false): bool
     {
         foreach ($this->fetchResources($cacheContent) as $resource) {
             /** @var SystemPropertiesInterface $sys */
