@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Mapper;
+namespace Contentful\Delivery\Mapper;
 
-use Atolye15\Delivery\Resource\Space as ResourceClass;
-use Atolye15\Delivery\SystemProperties\Space as SystemProperties;
+use Contentful\Delivery\Resource\Space as ResourceClass;
+use Contentful\Delivery\SystemProperties\Space as SystemProperties;
 
 /**
  * Space class.

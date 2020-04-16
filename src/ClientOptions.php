@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery;
+namespace Contentful\Delivery;
 
 use Cache\Adapter\Void\VoidCachePool;
 use Contentful\Core\Log\NullLogger;
@@ -32,12 +32,12 @@ class ClientOptions
     /**
      * @var bool
      */
-    private $cacheAutoWarmup = false;
+    private $cacheAutoWarmup = \false;
 
     /**
      * @var bool
      */
-    private $cacheContent = false;
+    private $cacheContent = \false;
 
     /**
      * @var LoggerInterface
@@ -57,12 +57,7 @@ class ClientOptions
     /**
      * @var bool
      */
-    private $usesLowMemoryResourcePool = false;
-
-    /**
-     * @var string
-     */
-    private $cacheKeyPrefix;
+    private $usesLowMemoryResourcePool = \false;
 
     /**
      * ClientOptions constructor.
@@ -74,12 +69,17 @@ class ClientOptions
         $this->httpClient = new HttpClient();
     }
 
+    /**
+     * @return self
+     */
     public static function create(): self
     {
         return new self();
     }
 
     /**
+     * @param string $locale
+     *
      * @return self
      */
     public function withDefaultLocale(string $locale)
@@ -97,6 +97,9 @@ class ClientOptions
         return $this->defaultLocale;
     }
 
+    /**
+     * @return self
+     */
     public function usingDeliveryApi(): self
     {
         $this->host = Client::URI_DELIVERY;
@@ -104,6 +107,9 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return self
+     */
     public function usingPreviewApi(): self
     {
         $this->host = Client::URI_PREVIEW;
@@ -111,6 +117,11 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @param string $host
+     *
+     * @return self
+     */
     public function withHost(string $host): self
     {
         if ('/' === \mb_substr($host, -1)) {
@@ -122,35 +133,52 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getHost(): string
     {
         return $this->host;
     }
 
+    /**
+     * @param CacheItemPoolInterface $cacheItemPool
+     * @param bool                   $autoWarmup
+     * @param bool                   $cacheContent
+     *
+     * @return self
+     */
     public function withCache(
         CacheItemPoolInterface $cacheItemPool,
-        bool $autoWarmup = false,
-        bool $cacheContent = false,
-        string $cacheKeyPrefix = ''
+        bool $autoWarmup = \false,
+        bool $cacheContent = \false
     ): self {
         $this->cacheItemPool = $cacheItemPool;
         $this->cacheAutoWarmup = $autoWarmup;
         $this->cacheContent = $cacheContent;
-        $this->cacheKeyPrefix = $cacheKeyPrefix;
 
         return $this;
     }
 
+    /**
+     * @return CacheItemPoolInterface
+     */
     public function getCacheItemPool(): CacheItemPoolInterface
     {
         return $this->cacheItemPool;
     }
 
+    /**
+     * @return bool
+     */
     public function hasCacheAutoWarmup(): bool
     {
         return $this->cacheAutoWarmup;
     }
 
+    /**
+     * @return bool
+     */
     public function hasCacheContent(): bool
     {
         return $this->cacheContent;
@@ -158,6 +186,10 @@ class ClientOptions
 
     /**
      * Configure the Client to use any PSR-3 compatible logger.
+     *
+     * @param LoggerInterface $logger
+     *
+     * @return self
      */
     public function withLogger(LoggerInterface $logger): self
     {
@@ -166,11 +198,19 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return LoggerInterface
+     */
     public function getLogger(): LoggerInterface
     {
         return $this->logger;
     }
 
+    /**
+     * @param HttpClient $client
+     *
+     * @return self
+     */
     public function withHttpClient(HttpClient $client): self
     {
         $this->httpClient = $client;
@@ -178,17 +218,12 @@ class ClientOptions
         return $this;
     }
 
+    /**
+     * @return HttpClient
+     */
     public function getHttpClient(): HttpClient
     {
         return $this->httpClient;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCacheKeyPrefix(): string
-    {
-        return $this->cacheKeyPrefix;
     }
 
     /**
@@ -199,7 +234,7 @@ class ClientOptions
      */
     public function withNormalResourcePool(): self
     {
-        $this->usesLowMemoryResourcePool = false;
+        $this->usesLowMemoryResourcePool = \false;
 
         return $this;
     }
@@ -214,11 +249,14 @@ class ClientOptions
      */
     public function withLowMemoryResourcePool(): self
     {
-        $this->usesLowMemoryResourcePool = true;
+        $this->usesLowMemoryResourcePool = \true;
 
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function usesLowMemoryResourcePool(): bool
     {
         return $this->usesLowMemoryResourcePool;

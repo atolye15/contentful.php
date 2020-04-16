@@ -1,5 +1,5 @@
 {
-    "name": "atolye15/contentful",
+    "name": "contentful/contentful",
     "description": "SDK for the Contentful Content Delivery API",
     "type": "library",
     "license": "MIT",
@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Atolye15\\Delivery\\": "src/"
+            "Contentful\\Delivery\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Atolye15\\Tests\\Delivery\\": "tests"
+            "Contentful\\Tests\\Delivery\\": "tests"
         },
         "files": [
             "vendor/contentful/core/scripts/TestCase.php"

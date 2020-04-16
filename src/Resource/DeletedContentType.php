@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Resource;
+namespace Contentful\Delivery\Resource;
 
-use Atolye15\Delivery\SystemProperties\DeletedContentType as SystemProperties;
+use Contentful\Delivery\SystemProperties\DeletedContentType as SystemProperties;
 
 /**
  * A DeletedContentType describes a content type that has been deleted.

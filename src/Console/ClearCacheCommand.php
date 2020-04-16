@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Console;
+namespace Contentful\Delivery\Console;
 
-use Atolye15\Delivery\Cache\CacheClearer;
+use Contentful\Delivery\Cache\CacheClearer;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -35,7 +35,10 @@ class ClearCacheCommand extends BaseCacheCommand
 
         $warmer = new CacheClearer($this->client, $this->resourcePool, $this->cacheItemPool);
         if (!$warmer->clear($cacheContent)) {
-            throw new \RuntimeException(\sprintf('The SDK could not clear the cache. Try checking your PSR-6 implementation (class "%s").', \get_class($this->cacheItemPool)));
+            throw new \RuntimeException(\sprintf(
+                'The SDK could not clear the cache. Try checking your PSR-6 implementation (class "%s").',
+                \get_class($this->cacheItemPool)
+            ));
         }
 
         $output->writeln(\sprintf(

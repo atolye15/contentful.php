@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Cache;
+namespace Contentful\Delivery\Cache;
 
 use Contentful\Core\Resource\SystemPropertiesInterface;
-use Atolye15\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
+use Contentful\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
 
 /**
  * CacheClearer class.
@@ -24,8 +24,10 @@ class CacheClearer extends BaseCacheHandler
 {
     /**
      * @param bool $cacheContent
+     *
+     * @return bool
      */
-    public function clear($cacheContent = false): bool
+    public function clear($cacheContent = \false): bool
     {
         $keys = [];
         foreach ($this->fetchResources($cacheContent) as $resource) {

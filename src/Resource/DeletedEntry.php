@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Resource;
+namespace Contentful\Delivery\Resource;
 
-use Atolye15\Delivery\SystemProperties\DeletedEntry as SystemProperties;
+use Contentful\Delivery\SystemProperties\DeletedEntry as SystemProperties;
 
 /**
  * A DeletedEntry describes an entry that has been deleted.
@@ -34,6 +34,8 @@ class DeletedEntry extends DeletedResource
     /**
      * This method always returns null when used with the sync API.
      * It does return a value when parsing a webhook response.
+     *
+     * @return ContentType
      */
     public function getContentType(): ContentType
     {

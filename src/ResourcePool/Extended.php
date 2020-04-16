@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\ResourcePool;
+namespace Contentful\Delivery\ResourcePool;
 
 use Contentful\Core\Resource\ResourceInterface;
-use Atolye15\Delivery\Client\JsonDecoderClientInterface;
+use Contentful\Delivery\Client\JsonDecoderClientInterface;
 use function GuzzleHttp\json_encode as guzzle_json_encode;
 use Psr\Cache\CacheItemPoolInterface;
 
@@ -57,11 +57,17 @@ class Extended extends Standard
      */
     protected $autoWarmup;
 
+    /**
+     * @param JsonDecoderClientInterface $client
+     * @param CacheItemPoolInterface     $cacheItemPool
+     * @param bool                       $autoWarmup
+     * @param bool                       $cacheContent
+     */
     public function __construct(
         JsonDecoderClientInterface $client,
         CacheItemPoolInterface $cacheItemPool,
-        bool $autoWarmup = false,
-        bool $cacheContent = false
+        bool $autoWarmup = \false,
+        bool $cacheContent = \false
     ) {
         parent::__construct(
             $client->getApi(),
@@ -83,7 +89,7 @@ class Extended extends Standard
      */
     protected function savesResource(string $type): bool
     {
-        return true;
+        return \true;
     }
 
     /**
@@ -93,14 +99,14 @@ class Extended extends Standard
     {
         $currentlyWarmingUp = isset($this->warmupStack[$key]);
         $alreadyWarmedUp = isset($this->resources[$key]);
-        $shouldWarmUp = \in_array($type, $this->warmupTypes, true);
+        $shouldWarmUp = \in_array($type, $this->warmupTypes, \true);
         if ($currentlyWarmingUp || $alreadyWarmedUp || !$shouldWarmUp) {
             return;
         }
 
         $item = $this->cacheItemPool->getItem($key);
         if ($item->isHit()) {
-            $this->warmupStack[$key] = true;
+            $this->warmupStack[$key] = \true;
             /** @var ResourceInterface $resource */
             $resource = $this->client->parseJson($item->get());
             $this->resources[$key] = $resource;
@@ -114,7 +120,7 @@ class Extended extends Standard
     public function save(ResourceInterface $resource): bool
     {
         if (!parent::save($resource)) {
-            return false;
+            return \false;
         }
 
         $key = $this->generateKey(
@@ -123,7 +129,7 @@ class Extended extends Standard
             ['locale' => $this->getResourceLocale($resource)]
         );
 
-        if ($this->autoWarmup && \in_array($resource->getType(), $this->warmupTypes, true)) {
+        if ($this->autoWarmup && \in_array($resource->getType(), $this->warmupTypes, \true)) {
             $cacheItem = $this->cacheItemPool->getItem($key);
             if (!$cacheItem->isHit()) {
                 $cacheItem->set(guzzle_json_encode($resource));
@@ -131,6 +137,6 @@ class Extended extends Standard
             }
         }
 
-        return true;
+        return \true;
     }
 }

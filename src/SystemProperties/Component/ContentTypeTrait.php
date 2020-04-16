@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\SystemProperties\Component;
+namespace Contentful\Delivery\SystemProperties\Component;
 
-use Atolye15\Delivery\Resource\ContentType;
+use Contentful\Delivery\Resource\ContentType;
 
 trait ContentTypeTrait
 {
@@ -20,11 +20,17 @@ trait ContentTypeTrait
      */
     protected $contentType;
 
+    /**
+     * @param array $data
+     */
     protected function initContentType(array $data)
     {
         $this->contentType = $data['contentType'];
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeContentType(): array
     {
         return [
@@ -32,6 +38,9 @@ trait ContentTypeTrait
         ];
     }
 
+    /**
+     * @return ContentType
+     */
     public function getContentType(): ContentType
     {
         return $this->contentType;

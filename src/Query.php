@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery;
+namespace Contentful\Delivery;
 
 use Contentful\Core\Api\BaseQuery;
 
@@ -34,14 +34,16 @@ class Query extends BaseQuery
 
     /**
      * Returns the parameters to execute this query.
+     *
+     * @return array
      */
     public function getQueryData(): array
     {
         $query = parent::getQueryData();
-        if (null !== $this->include) {
+        if (\null !== $this->include) {
             $query['include'] = $this->include;
         }
-        if (null !== $this->locale) {
+        if (\null !== $this->locale) {
             $query['locale'] = $this->locale;
         }
 
@@ -51,9 +53,11 @@ class Query extends BaseQuery
     /**
      * Set the amount of levels of links that should be resolved.
      *
+     * @param int|null $include
+     *
      * @return $this
      */
-    public function setInclude(int $include = null)
+    public function setInclude(int $include = \null)
     {
         $this->include = $include;
 
@@ -63,9 +67,11 @@ class Query extends BaseQuery
     /**
      * Sets the locale for which content should be retrieved. Set it to `*` to retrieve all locales.
      *
+     * @param string|null $locale
+     *
      * @return $this
      */
-    public function setLocale(string $locale = null)
+    public function setLocale(string $locale = \null)
     {
         $this->locale = $locale;
 

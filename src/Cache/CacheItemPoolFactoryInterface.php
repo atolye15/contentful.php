@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Cache;
+namespace Contentful\Delivery\Cache;
 
 use Psr\Cache\CacheItemPoolInterface;
 
@@ -32,6 +32,8 @@ interface CacheItemPoolFactoryInterface
      *                              it's the result of calling $client->getApi()
      * @param string $spaceId       The ID of the space
      * @param string $environmentId The ID of the environment
+     *
+     * @return CacheItemPoolInterface
      */
     public function getCacheItemPool(string $api, string $spaceId, string $environmentId): CacheItemPoolInterface;
 }

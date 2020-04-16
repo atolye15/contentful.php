@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\SystemProperties;
+namespace Contentful\Delivery\SystemProperties;
 
 use Contentful\Core\Resource\SystemPropertiesInterface;
 
@@ -30,6 +30,8 @@ abstract class BaseSystemProperties implements SystemPropertiesInterface
 
     /**
      * SystemProperties constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {
@@ -37,11 +39,17 @@ abstract class BaseSystemProperties implements SystemPropertiesInterface
         $this->type = $sys['type'];
     }
 
+    /**
+     * @return string
+     */
     public function getId(): string
     {
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getType(): string
     {
         return $this->type;

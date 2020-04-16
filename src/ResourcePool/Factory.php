@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\ResourcePool;
+namespace Contentful\Delivery\ResourcePool;
 
 use Contentful\Core\Resource\ResourcePoolInterface;
-use Atolye15\Delivery\Client\JsonDecoderClientInterface;
-use Atolye15\Delivery\ClientOptions;
+use Contentful\Delivery\Client\JsonDecoderClientInterface;
+use Contentful\Delivery\ClientOptions;
 
 /**
  * Factory class.
@@ -23,6 +23,11 @@ class Factory
 {
     /**
      * Creates the appropriate ResourcePool object using the given client and options.
+     *
+     * @param JsonDecoderClientInterface $client
+     * @param ClientOptions              $options
+     *
+     * @return ResourcePoolInterface
      */
     public static function create(JsonDecoderClientInterface $client, ClientOptions $options): ResourcePoolInterface
     {

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Resource;
+namespace Contentful\Delivery\Resource;
 
 use Contentful\Core\Api\Link;
 use Contentful\Core\Resource\ResourceInterface;
@@ -20,6 +20,8 @@ abstract class BaseResource implements ResourceInterface
      * Resources in this SDK should not be built using `$new Class()`.
      * This method is only useful in testing environments, where the resource
      * needs to be subclasses and this method made public.
+     *
+     * @param array $data
      */
     protected function __construct(array $data)
     {

@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Mapper;
+namespace Contentful\Delivery\Mapper;
 
-use Atolye15\Delivery\Resource\ContentType as ResourceClass;
-use Atolye15\Delivery\Resource\ContentType\Field as ResourceContentTypeField;
-use Atolye15\Delivery\SystemProperties\ContentType as SystemProperties;
+use Contentful\Delivery\Resource\ContentType as ResourceClass;
+use Contentful\Delivery\Resource\ContentType\Field as ResourceContentTypeField;
+use Contentful\Delivery\SystemProperties\ContentType as SystemProperties;
 
 /**
  * ContentType class.
@@ -38,14 +38,19 @@ class ContentType extends BaseMapper
         $contentType = $this->hydrator->hydrate($resource ?: ResourceClass::class, [
             'sys' => $this->createSystemProperties(SystemProperties::class, $data),
             'name' => $data['name'],
-            'displayField' => $data['displayField'] ?? null,
-            'description' => $data['description'] ?? null,
+            'displayField' => $data['displayField'] ?? \null,
+            'description' => $data['description'] ?? \null,
             'fields' => $fields,
         ]);
 
         return $contentType;
     }
 
+    /**
+     * @param array $data
+     *
+     * @return ResourceContentTypeField
+     */
     protected function mapField(array $data): ResourceContentTypeField
     {
         /** @var ResourceContentTypeField $field */
@@ -53,12 +58,12 @@ class ContentType extends BaseMapper
             'id' => $data['id'],
             'name' => $data['name'],
             'type' => $data['type'],
-            'linkType' => $data['linkType'] ?? null,
-            'itemsType' => isset($data['items']) && isset($data['items']['type']) ? $data['items']['type'] : null,
-            'itemsLinkType' => isset($data['items']) && isset($data['items']['linkType']) ? $data['items']['linkType'] : null,
-            'required' => $data['required'] ?? false,
-            'localized' => $data['localized'] ?? false,
-            'disabled' => $data['disabled'] ?? false,
+            'linkType' => $data['linkType'] ?? \null,
+            'itemsType' => isset($data['items']) && isset($data['items']['type']) ? $data['items']['type'] : \null,
+            'itemsLinkType' => isset($data['items']) && isset($data['items']['linkType']) ? $data['items']['linkType'] : \null,
+            'required' => $data['required'] ?? \false,
+            'localized' => $data['localized'] ?? \false,
+            'disabled' => $data['disabled'] ?? \false,
         ]);
 
         return $field;

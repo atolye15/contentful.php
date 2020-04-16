@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Resource;
+namespace Contentful\Delivery\Resource;
 
-use Atolye15\Delivery\SystemProperties\Locale as SystemProperties;
+use Contentful\Delivery\SystemProperties\Locale as SystemProperties;
 
 /**
  * Value object encoding a locale.
@@ -41,7 +41,7 @@ class Locale extends BaseResource
     /**
      * @var bool
      */
-    protected $default = false;
+    protected $default = \false;
 
     /**
      * {@inheritdoc}
@@ -53,6 +53,8 @@ class Locale extends BaseResource
 
     /**
      * Returns the locale code.
+     *
+     * @return string
      */
     public function getCode(): string
     {
@@ -61,6 +63,8 @@ class Locale extends BaseResource
 
     /**
      * Returns the human readable name.
+     *
+     * @return string
      */
     public function getName(): string
     {
@@ -69,6 +73,8 @@ class Locale extends BaseResource
 
     /**
      * Returns true if this is the default locale for the space.
+     *
+     * @return bool
      */
     public function isDefault(): bool
     {

@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Cache;
+namespace Contentful\Delivery\Cache;
 
 use Contentful\Core\Resource\SystemPropertiesInterface;
-use Atolye15\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
+use Contentful\Delivery\SystemProperties\LocalizedResource as LocalizedResourceSystemProperties;
 use function GuzzleHttp\json_encode as guzzle_json_encode;
 
 /**
@@ -25,8 +25,10 @@ class CacheWarmer extends BaseCacheHandler
 {
     /**
      * @param bool $cacheContent
+     *
+     * @return bool
      */
-    public function warmUp($cacheContent = false): bool
+    public function warmUp($cacheContent = \false): bool
     {
         foreach ($this->fetchResources($cacheContent) as $resource) {
             /** @var SystemPropertiesInterface $sys */

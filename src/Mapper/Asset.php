@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Mapper;
+namespace Contentful\Delivery\Mapper;
 
 use Contentful\Core\Api\Link;
 use Contentful\Core\File\File;
@@ -17,8 +17,8 @@ use Contentful\Core\File\FileInterface;
 use Contentful\Core\File\ImageFile;
 use Contentful\Core\File\LocalUploadFile;
 use Contentful\Core\File\RemoteUploadFile;
-use Atolye15\Delivery\Resource\Asset as ResourceClass;
-use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
+use Contentful\Delivery\Resource\Asset as ResourceClass;
+use Contentful\Delivery\SystemProperties\Asset as SystemProperties;
 
 /**
  * Asset class.
@@ -42,13 +42,13 @@ class Asset extends BaseMapper
             'sys' => $sys,
             'title' => isset($data['fields']['title'])
                 ? $this->normalizeFieldData($data['fields']['title'], $locale)
-                : null,
+                : \null,
             'description' => isset($data['fields']['description'])
                 ? $this->normalizeFieldData($data['fields']['description'], $locale)
-                : null,
+                : \null,
             'file' => isset($data['fields']['file'])
                 ? \array_map([$this, 'buildFile'], $this->normalizeFieldData($data['fields']['file'], $locale))
-                : null,
+                : \null,
         ]);
 
         $asset->initLocales($asset->getSystemProperties()->getEnvironment()->getLocales());
@@ -58,6 +58,10 @@ class Asset extends BaseMapper
 
     /**
      * Creates a File or a subclass thereof.
+     *
+     * @param array $data
+     *
+     * @return FileInterface
      */
     protected function buildFile(array $data): FileInterface
     {

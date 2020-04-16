@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\SystemProperties;
+namespace Contentful\Delivery\SystemProperties;
 
 class DeletedContentType extends ContentType
 {
@@ -17,6 +17,8 @@ class DeletedContentType extends ContentType
 
     /**
      * DeletedContentType constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {

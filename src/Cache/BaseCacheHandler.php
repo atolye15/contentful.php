@@ -9,13 +9,13 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Cache;
+namespace Contentful\Delivery\Cache;
 
 use Contentful\Core\Resource\ResourceInterface;
 use Contentful\Core\Resource\ResourcePoolInterface;
-use Atolye15\Delivery\Client\ClientInterface;
-use Atolye15\Delivery\Query;
-use Atolye15\Delivery\Resource\Locale;
+use Contentful\Delivery\Client\ClientInterface;
+use Contentful\Delivery\Query;
+use Contentful\Delivery\Resource\Locale;
 use Psr\Cache\CacheItemPoolInterface;
 
 abstract class BaseCacheHandler
@@ -37,6 +37,10 @@ abstract class BaseCacheHandler
 
     /**
      * CacheWarmer constructor.
+     *
+     * @param ClientInterface        $client
+     * @param ResourcePoolInterface  $resourcePool
+     * @param CacheItemPoolInterface $cacheItemPool
      */
     public function __construct(
         ClientInterface $client,
@@ -49,9 +53,11 @@ abstract class BaseCacheHandler
     }
 
     /**
+     * @param bool $cacheContent
+     *
      * @return ResourceInterface[]
      */
-    protected function fetchResources(bool $cacheContent = false)
+    protected function fetchResources(bool $cacheContent = \false)
     {
         $resources = [
             $this->client->getSpace(),
@@ -88,6 +94,8 @@ abstract class BaseCacheHandler
     /**
      * @param string   $type    Either 'Entry' or 'Asset'
      * @param string[] $locales
+     *
+     * @return \Generator
      */
     private function fetchCollection(string $type, array $locales): \Generator
     {

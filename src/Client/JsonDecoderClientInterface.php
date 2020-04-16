@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Client;
+namespace Contentful\Delivery\Client;
 
 use Contentful\Core\Resource\ResourceArray;
 use Contentful\Core\Resource\ResourceInterface;
@@ -18,6 +18,8 @@ interface JsonDecoderClientInterface extends ScopedClientInterface
 {
     /**
      * Parse a JSON string.
+     *
+     * @param string $json
      *
      * @throws \InvalidArgumentException When attempting to parse JSON belonging to a different space or environment
      *

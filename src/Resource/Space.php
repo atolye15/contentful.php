@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Resource;
+namespace Contentful\Delivery\Resource;
 
-use Atolye15\Delivery\SystemProperties\Space as SystemProperties;
+use Contentful\Delivery\SystemProperties\Space as SystemProperties;
 
 /**
  * The Space class represents a single space identified by its ID and holding some metadata.
@@ -38,6 +38,8 @@ class Space extends BaseResource
 
     /**
      * Returns the name of this space.
+     *
+     * @return string
      */
     public function getName(): string
     {

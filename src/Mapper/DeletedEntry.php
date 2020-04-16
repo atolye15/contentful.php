@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Mapper;
+namespace Contentful\Delivery\Mapper;
 
 use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
-use Atolye15\Delivery\Client\ClientInterface;
-use Atolye15\Delivery\Resource\ContentType as ContentTypeClass;
-use Atolye15\Delivery\Resource\DeletedEntry as ResourceClass;
-use Atolye15\Delivery\SystemProperties\ContentType as ContentTypeSystemProperties;
-use Atolye15\Delivery\SystemProperties\DeletedEntry as SystemProperties;
+use Contentful\Delivery\Client\ClientInterface;
+use Contentful\Delivery\Resource\ContentType as ContentTypeClass;
+use Contentful\Delivery\Resource\DeletedEntry as ResourceClass;
+use Contentful\Delivery\SystemProperties\ContentType as ContentTypeSystemProperties;
+use Contentful\Delivery\SystemProperties\DeletedEntry as SystemProperties;
 use Contentful\RichText\ParserInterface;
 
 /**

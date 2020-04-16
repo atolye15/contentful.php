@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\SystemProperties\Component;
+namespace Contentful\Delivery\SystemProperties\Component;
 
 trait RevisionTrait
 {
@@ -18,11 +18,17 @@ trait RevisionTrait
      */
     protected $revision;
 
+    /**
+     * @param array $data
+     */
     protected function initRevision(array $data)
     {
         $this->revision = $data['revision'] ?? $data['version'] ?? 1;
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeRevision(string $name = 'revision'): array
     {
         return [
@@ -30,6 +36,9 @@ trait RevisionTrait
         ];
     }
 
+    /**
+     * @return int
+     */
     public function getRevision(): int
     {
         return $this->revision;

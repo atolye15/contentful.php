@@ -9,18 +9,18 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\SystemProperties;
+namespace Contentful\Delivery\SystemProperties;
 
 class ContentType extends BaseSystemProperties
 {
-    use Component\EditedTrait;
-    use
-        Component\EnvironmentTrait;
-    use
+    use Component\EditedTrait,
+        Component\EnvironmentTrait,
         Component\SpaceTrait;
 
     /**
      * ContentType constructor.
+     *
+     * @param array $sys
      */
     public function __construct(array $sys)
     {

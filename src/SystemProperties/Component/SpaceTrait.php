@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\SystemProperties\Component;
+namespace Contentful\Delivery\SystemProperties\Component;
 
-use Atolye15\Delivery\Resource\Space;
+use Contentful\Delivery\Resource\Space;
 
 trait SpaceTrait
 {
@@ -20,11 +20,17 @@ trait SpaceTrait
      */
     protected $space;
 
+    /**
+     * @param array $data
+     */
     protected function initSpace(array $data)
     {
         $this->space = $data['space'];
     }
 
+    /**
+     * @return array
+     */
     protected function jsonSerializeSpace(): array
     {
         return [
@@ -32,6 +38,9 @@ trait SpaceTrait
         ];
     }
 
+    /**
+     * @return Space
+     */
     public function getSpace(): Space
     {
         return $this->space;

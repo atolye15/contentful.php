@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace Atolye15\Delivery\Mapper;
+namespace Contentful\Delivery\Mapper;
 
-use Atolye15\Delivery\Resource\DeletedContentType as ResourceClass;
-use Atolye15\Delivery\SystemProperties\DeletedContentType as SystemProperties;
+use Contentful\Delivery\Resource\DeletedContentType as ResourceClass;
+use Contentful\Delivery\SystemProperties\DeletedContentType as SystemProperties;
 
 /**
  * DeletedContentType class.
