@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Delivery\SystemProperties\DeletedEntry as SystemProperties;
+use Atolye15\Delivery\SystemProperties\DeletedEntry as SystemProperties;
 
 /**
  * A DeletedEntry describes an entry that has been deleted.

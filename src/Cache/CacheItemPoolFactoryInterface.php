@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Cache;
+namespace Atolye15\Delivery\Cache;
 
 use Psr\Cache\CacheItemPoolInterface;
 

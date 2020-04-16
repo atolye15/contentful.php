@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Console;
+namespace Atolye15\Delivery\Console;
 
-use Contentful\Delivery\Cache\CacheWarmer;
+use Atolye15\Delivery\Cache\CacheWarmer;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

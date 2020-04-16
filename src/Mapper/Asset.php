@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
 use Contentful\Core\Api\Link;
 use Contentful\Core\File\File;
@@ -17,14 +17,14 @@ use Contentful\Core\File\FileInterface;
 use Contentful\Core\File\ImageFile;
 use Contentful\Core\File\LocalUploadFile;
 use Contentful\Core\File\RemoteUploadFile;
-use Contentful\Delivery\Resource\Asset as ResourceClass;
-use Contentful\Delivery\SystemProperties\Asset as SystemProperties;
+use Atolye15\Delivery\Resource\Asset as ResourceClass;
+use Atolye15\Delivery\SystemProperties\Asset as SystemProperties;
 
 /**
  * Asset class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\Asset.
+ * of class Atolye15\Delivery\Resource\Asset.
  */
 class Asset extends BaseMapper
 {

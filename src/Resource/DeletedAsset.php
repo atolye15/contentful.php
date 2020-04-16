@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Delivery\SystemProperties\DeletedAsset as SystemProperties;
+use Atolye15\Delivery\SystemProperties\DeletedAsset as SystemProperties;
 
 /**
  * A DeletedAsset describes an asset that has been deleted.

@@ -94,10 +94,10 @@ composer require contentful/contentful
 ### Your first request
 
 The following code snippet is the most basic one you can use to get some content from Contentful with this SDK:
-All interactions with the SDK go through `Contentful\Delivery\Client`. To create a new client an access token and a space ID have to be passed to the constructor.
+All interactions with the SDK go through `Atolye15\Delivery\Client`. To create a new client an access token and a space ID have to be passed to the constructor.
 
 ``` php
-$client = new \Contentful\Delivery\Client(
+$client = new \Atolye15\Delivery\Client(
     'b4c0n73n7fu1', # This is the access token for this space. Normally you get both ID and the token in the Contentful web app
     'cfexampleapi' # This is the space ID. A space is like a project folder in Contentful terms
 );
@@ -114,9 +114,9 @@ try {
 This SDK can also be used with the Preview API. In order to do so, you need to use the Preview API access token, available on the same page where you get the Delivery API token, and tell the client to use the different API:
 
 ``` php
-$options = \Contentful\Delivery\ClientOptions::create()
+$options = \Atolye15\Delivery\ClientOptions::create()
     ->usingPreviewApi();
-$client = new \Contentful\Delivery\Client($accessToken, $spaceId, $environmentId, $options);
+$client = new \Atolye15\Delivery\Client($accessToken, $spaceId, $environmentId, $options);
 ```
 
 You can find all available methods of our client in our [reference documentation](https://contentful.github.io/contentful.php).
@@ -144,7 +144,7 @@ For more information, check the [Contentful REST API reference on Authentication
 The `ClientOptions` class allows you to configure the client in a variety of different ways:
 
 ``` php
-$options = \Contentful\Delivery\ClientOptions::create()
+$options = \Atolye15\Delivery\ClientOptions::create()
     ->usingPreviewApi()
     ->withDefaultLocale(string $defaultLocale = null)
     ->withHost(string $host)
@@ -153,7 +153,7 @@ $options = \Contentful\Delivery\ClientOptions::create()
     ->withHttpClient(GuzzleHttp\Client $client)
 ;
 
-$client = new \Contentful\Delivery\Client(
+$client = new \Atolye15\Delivery\Client(
     string $accessToken,
     string $spaceId,
     string $environmentId = 'master',

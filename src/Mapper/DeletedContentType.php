@@ -9,16 +9,16 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
-use Contentful\Delivery\Resource\DeletedContentType as ResourceClass;
-use Contentful\Delivery\SystemProperties\DeletedContentType as SystemProperties;
+use Atolye15\Delivery\Resource\DeletedContentType as ResourceClass;
+use Atolye15\Delivery\SystemProperties\DeletedContentType as SystemProperties;
 
 /**
  * DeletedContentType class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\DeletedContentType.
+ * of class Atolye15\Delivery\Resource\DeletedContentType.
  */
 class DeletedContentType extends BaseMapper
 {

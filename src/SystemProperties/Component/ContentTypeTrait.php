@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\SystemProperties\Component;
+namespace Atolye15\Delivery\SystemProperties\Component;
 
-use Contentful\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\ContentType;
 
 trait ContentTypeTrait
 {

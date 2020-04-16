@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\SystemProperties\Component;
+namespace Atolye15\Delivery\SystemProperties\Component;
 
 use Contentful\Core\Api\DateTimeImmutable;
 

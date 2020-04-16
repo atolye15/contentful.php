@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery;
+namespace Atolye15\Delivery;
 
 use Contentful\Core\Api\BaseClient;
 use Contentful\Core\Api\Exception;
@@ -19,16 +19,16 @@ use Contentful\Core\Resource\ResourceArray;
 use Contentful\Core\Resource\ResourceInterface;
 use Contentful\Core\Resource\ResourcePoolInterface;
 use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
-use Contentful\Delivery\Client\ClientInterface;
-use Contentful\Delivery\Client\JsonDecoderClientInterface;
-use Contentful\Delivery\Client\SynchronizationClientInterface;
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Resource\Entry;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
-use Contentful\Delivery\ResourcePool\Factory;
-use Contentful\Delivery\Synchronization\Manager;
+use Atolye15\Delivery\Client\ClientInterface;
+use Atolye15\Delivery\Client\JsonDecoderClientInterface;
+use Atolye15\Delivery\Client\SynchronizationClientInterface;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\Entry;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
+use Atolye15\Delivery\ResourcePool\Factory;
+use Atolye15\Delivery\Synchronization\Manager;
 use Contentful\RichText\Parser;
 
 /**

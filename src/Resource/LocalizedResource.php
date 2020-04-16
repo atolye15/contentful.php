@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Delivery\SystemProperties\LocalizedResource as SystemProperties;
+use Atolye15\Delivery\SystemProperties\LocalizedResource as SystemProperties;
 
 /**
  * A LocalizedResource can store information for multiple locales.

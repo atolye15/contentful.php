@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Synchronization;
+namespace Atolye15\Delivery\Synchronization;
 
 use Contentful\Core\Resource\ResourceInterface;
 

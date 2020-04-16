@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource;
+namespace Atolye15\Delivery\Resource;
 
-use Contentful\Delivery\SystemProperties\Locale as SystemProperties;
+use Atolye15\Delivery\SystemProperties\Locale as SystemProperties;
 
 /**
  * Value object encoding a locale.

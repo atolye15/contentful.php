@@ -9,17 +9,17 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
-use Contentful\Delivery\Resource\ContentType as ResourceClass;
-use Contentful\Delivery\Resource\ContentType\Field as ResourceContentTypeField;
-use Contentful\Delivery\SystemProperties\ContentType as SystemProperties;
+use Atolye15\Delivery\Resource\ContentType as ResourceClass;
+use Atolye15\Delivery\Resource\ContentType\Field as ResourceContentTypeField;
+use Atolye15\Delivery\SystemProperties\ContentType as SystemProperties;
 
 /**
  * ContentType class.
  *
  * This class is responsible for converting raw API data into a PHP object
- * of class Contentful\Delivery\Resource\ContentType.
+ * of class Atolye15\Delivery\Resource\ContentType.
  */
 class ContentType extends BaseMapper
 {

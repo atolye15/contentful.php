@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Mapper;
+namespace Atolye15\Delivery\Mapper;
 
 use Contentful\Core\Resource\ResourceInterface;
 use Contentful\Core\Resource\SystemPropertiesInterface;
 use Contentful\Core\ResourceBuilder\MapperInterface;
 use Contentful\Core\ResourceBuilder\ObjectHydrator;
 use Contentful\Core\ResourceBuilder\ResourceBuilderInterface;
-use Contentful\Delivery\Client\ClientInterface;
+use Atolye15\Delivery\Client\ClientInterface;
 use Contentful\RichText\ParserInterface;
 
 /**

@@ -6,7 +6,7 @@ The SDK now requires PHP 7.0, and it employs the `declare(strict_types=1)` direc
 
 ## Change of signature of client constructor
 
-The client now accepts 3 string parameters, and a `Contentful\Delivery\ClientOptions` object. These are the before and after:
+The client now accepts 3 string parameters, and a `Atolye15\Delivery\ClientOptions` object. These are the before and after:
 
 ### Using the Preview API
 
@@ -69,11 +69,11 @@ new Client($token, $spaceId, $environmentId, $options);
 
 ## Introduction of ClientInterface
 
-Interface `Contentful\Delivery\Client\ClientInterface` was created, and it is implemented by the standard client. It is recommended to use this interface when passing the client instance around, as it decouples your code from the actual implementation, helping with testing scenarios.
+Interface `Atolye15\Delivery\Client\ClientInterface` was created, and it is implemented by the standard client. It is recommended to use this interface when passing the client instance around, as it decouples your code from the actual implementation, helping with testing scenarios.
 
 ## Removal of third parameter in Query::where()
 
-The `Contentful\Delivery\Query::where()` method used to accept a third parameter, which was used to specify the type of search (for instance with operators `near` or `lte`). As many users did not know this and appended the operator to the first parameter of `where()`, now the third parameter was removed, and the correct way of using the operator is to add it to the first parameter:
+The `Atolye15\Delivery\Query::where()` method used to accept a third parameter, which was used to specify the type of search (for instance with operators `near` or `lte`). As many users did not know this and appended the operator to the first parameter of `where()`, now the third parameter was removed, and the correct way of using the operator is to add it to the first parameter:
 
 ``` php
 // Before
@@ -85,30 +85,30 @@ $query->where('fields.age[gte]', 18);
 
 ## Change of name for instance repository
 
-The `Contentful\Delivery\InstanceRepository` class was renamed `Contentful\Delivery\ResourcePool`, and therefore the `Client::getInstanceRepository()` method was renamed `Client::getResourcePool()`.
+The `Atolye15\Delivery\InstanceRepository` class was renamed `Atolye15\Delivery\ResourcePool`, and therefore the `Client::getInstanceRepository()` method was renamed `Client::getResourcePool()`.
 
 ## Strict types in CacheItemPoolFactoryInterface
 
-Interface `Contentful\Delivery\Cache\CacheItemPoolFactoryInterface` no longer declares a constructor, however remember that the class is still supposed to be instantiated from the CLI commands without arguments. Furthermore, its method `getCacheItemPool` now uses explicit type declaration for parameters and return value, so your classes implementing this interface will have to be updated accordingly. 
+Interface `Atolye15\Delivery\Cache\CacheItemPoolFactoryInterface` no longer declares a constructor, however remember that the class is still supposed to be instantiated from the CLI commands without arguments. Furthermore, its method `getCacheItemPool` now uses explicit type declaration for parameters and return value, so your classes implementing this interface will have to be updated accordingly. 
 
 ## Change of handling for SystemProperties
 
-Previously, all resources shared a common implementation of the system properties object, located in `Contentful\Delivery\SystemProperties`. The issue with implementation was that in order to accommodate for all possible resources, the class was unnecessarily big and contained many nullable properties.
+Previously, all resources shared a common implementation of the system properties object, located in `Atolye15\Delivery\SystemProperties`. The issue with implementation was that in order to accommodate for all possible resources, the class was unnecessarily big and contained many nullable properties.
 
 To fix this and make the handling of system properties more robust, now every resource declares a specific system properties class, which is enforced through strict typing in their corresponding `->getSystemProperties()` methods:
 
 ```php
-/** @var \Contentful\Delivery\SystemProperties\Entry $sys */
+/** @var \Atolye15\Delivery\SystemProperties\Entry $sys */
 $sys = $entry->getSystemProperties();
 
-/** @var \Contentful\Delivery\SystemProperties\Asset $sys */
+/** @var \Atolye15\Delivery\SystemProperties\Asset $sys */
 $sys = $asset->getSystemProperties();
 
-/** @var \Contentful\Delivery\SystemProperties\ContentType $sys */
+/** @var \Atolye15\Delivery\SystemProperties\ContentType $sys */
 $sys = $contentType->getSystemProperties();
 ```
 
 The system properties objects will work just like before, but pay attention to two things:
 
-* If you were type hinting against general `Contentful\Delivery\SystemProperties` class, you need to change that to something more specific. If you still need something generic, you can use the base `Contentful\Core\Resource\SystemPropertiesInterface`, but be careful as it only defines the `getId()` and `getType()` methods.
-* Methods that conceptually did not belong to a resource's system properties will no longer exist. For instance, you will not find the `getDeletedAt()` method in the `Contentful\Delivery\SystemProperties\Space` class.
+* If you were type hinting against general `Atolye15\Delivery\SystemProperties` class, you need to change that to something more specific. If you still need something generic, you can use the base `Contentful\Core\Resource\SystemPropertiesInterface`, but be careful as it only defines the `getId()` and `getType()` methods.
+* Methods that conceptually did not belong to a resource's system properties will no longer exist. For instance, you will not find the `getDeletedAt()` method in the `Atolye15\Delivery\SystemProperties\Space` class.

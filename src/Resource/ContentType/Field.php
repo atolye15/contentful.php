@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Resource\ContentType;
+namespace Atolye15\Delivery\Resource\ContentType;
 
 /**
  * A Field describes one field of a ContentType.

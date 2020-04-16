@@ -9,18 +9,18 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Client;
+namespace Atolye15\Delivery\Client;
 
 use Contentful\Core\Api\Link;
 use Contentful\Core\Exception\NotFoundException;
 use Contentful\Core\Resource\ResourceArray;
 use Contentful\Core\Resource\ResourceInterface;
-use Contentful\Delivery\Query;
-use Contentful\Delivery\Resource\Asset;
-use Contentful\Delivery\Resource\ContentType;
-use Contentful\Delivery\Resource\Entry;
-use Contentful\Delivery\Resource\Environment;
-use Contentful\Delivery\Resource\Space;
+use Atolye15\Delivery\Query;
+use Atolye15\Delivery\Resource\Asset;
+use Atolye15\Delivery\Resource\ContentType;
+use Atolye15\Delivery\Resource\Entry;
+use Atolye15\Delivery\Resource\Environment;
+use Atolye15\Delivery\Resource\Space;
 
 /**
  * ClientInterface.

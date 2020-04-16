@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery\Console;
+namespace Atolye15\Delivery\Console;
 
 use Symfony\Component\Console\Application as AbstractApplication;
 

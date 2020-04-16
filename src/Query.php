@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace Contentful\Delivery;
+namespace Atolye15\Delivery;
 
 use Contentful\Core\Api\BaseQuery;
 
