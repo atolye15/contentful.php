@@ -162,9 +162,7 @@ class Standard extends BaseResourcePool
             '*' => '__ALL__',
         ]);
 
-        return 'contentful.'
-            .$this->cacheKeyPrefix
-            .$this->cacheKeyPrefix !== '' ? '.' : ''
+        $generatedKey = 'contentful.'
             .$this->api
             .'.'
             .$this->spaceId
@@ -175,6 +173,9 @@ class Standard extends BaseResourcePool
             .'.'
             .$this->sanitize($id)
             .'.'
-            .$locale;
+            .$locale
+        ;
+
+        return $this->cacheKeyPrefix !== '' ? sprintf('%s_%s', $this->cacheKeyPrefix, $generatedKey) : $generatedKey;
     }
 }
